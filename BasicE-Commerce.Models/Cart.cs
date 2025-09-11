@@ -12,11 +12,9 @@ namespace BasicE_Commerce.Models
         public DateOnly CreateAt { get; set; }
         [ForeignKey("User")]
         public int UserId { get; set; }
-       public User user { get; set; }
-        [ForeignKey("CartItem")]
+        public User user { get; set; } 
         public int CartItemId { get; set; }
         public CartItem item { get; set; }
-        [ForeignKey("order")]
         public int OrderId { get; set; }
         public Order Order { get; set; }
 
