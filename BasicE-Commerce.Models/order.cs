@@ -9,7 +9,7 @@ namespace BasicE_Commerce.Models
 {
     public class Order : BaseEntity<int>
     {
-        public DateTime  OrderDate {  get; set; }
+        public DateTime  OrderDate {  get; set; }= DateTime.Now;
         public string Status { get; set; } = "Pending";
         public int CartId { get; set; }
         public Cart Cart { get; set; } = null!;

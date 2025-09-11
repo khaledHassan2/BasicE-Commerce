@@ -23,6 +23,10 @@ namespace BasicE_Commerce.Context.Configurations
                 .WithOne(p => p.Category)
                 .HasForeignKey(p => p.CategoryId)
                 .OnDelete(DeleteBehavior.SetNull);
+            builder.HasData(
+              new Category { Id = 1, Name = "Electronics", Description = "Electronic devices" },
+              new Category { Id = 2, Name = "Accessories", Description = "Computer accessories" }
+          );
         }
     }
 }
