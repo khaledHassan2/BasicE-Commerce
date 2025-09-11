@@ -13,7 +13,7 @@ namespace BasicE_Commerce.Models
         public double UnitPrice {  get; set; }
         [ForeignKey("order")]
         public int OrderID { get; set; }
-        public ICollection<order > orders { get; set; }
+        public ICollection<Order > orders { get; set; }
         [ForeignKey("Product")]
         public int ProductID { get; set; }
         public  ICollection <Product> Products { get; set; }

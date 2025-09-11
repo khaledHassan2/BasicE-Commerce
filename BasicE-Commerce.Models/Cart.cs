@@ -18,7 +18,7 @@ namespace BasicE_Commerce.Models
         public CartItem item { get; set; }
         [ForeignKey("order")]
         public int OrderId { get; set; }
-        public order order { get; set; }
+        public Order Order { get; set; }
 
 
     }
