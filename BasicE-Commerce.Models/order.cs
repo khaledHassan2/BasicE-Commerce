@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BasicE_Commerce.Models
 {
-    public class order:BaseEntity<int>
+    public class Order : BaseEntity<int>
     {
        public DateOnly  OrderDate {  get; set; }
         public string Stutas { get; set; }
