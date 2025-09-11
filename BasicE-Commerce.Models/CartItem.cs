@@ -10,13 +10,10 @@ namespace BasicE_Commerce.Models
     public  class CartItem :BaseEntity<int>
     {
         public int Quantity{ get; set;}
-        [ForeignKey("Cart")]
         public int CartID{ get; set;}
-        public Cart Cart{ get; set;}
-        [ForeignKey("Product")]
-        public int ProductId {  get; set;}
-        public  ICollection <Product> products { get; set;}
-
+        public Cart Cart{ get; set;}= null!;
+        public int ProductId {  get; set;}  
+        public Product Product { get; set; } = null!;
 
     }
 }

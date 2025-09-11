@@ -9,20 +9,16 @@ namespace BasicE_Commerce.Models
 {
     public class Product:BaseEntity<int>
     {
-        public string Name { get; set; }
-        public string Description { get; set; }
-      public int Stock {  get; set; }
-        [ForeignKey("Category")]
-        public int CategotyId {  get; set; }
-        public Category catogry { get; set; }
-        [ForeignKey("OrderItem")]
-        public int ItemOrderId {  get; set; }
-        public OrderItem item { get; set; }
-        [ForeignKey("Category")]
-        public int  CategoryId {  get; set; }
-        public Category Category { get; set; }
+        public string Name { get; set; } = null!;
+        public string? Description { get; set; }
+        public int Stock {  get; set; }
+        public decimal Price {  get; set; }
+        public string? Image {  get; set; }
+        public int CategoryId {  get; set; }
+        public Category Category { get; set; } = null!;
 
-
+        public ICollection<OrderItem> OrderItems { get; set; }= new List<OrderItem>();
+        public ICollection<CartItem> CartItems { get; set; }= new List<CartItem>(); 
 
     }
 }

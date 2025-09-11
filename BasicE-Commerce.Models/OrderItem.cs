@@ -10,12 +10,11 @@ namespace BasicE_Commerce.Models
     public  class OrderItem:BaseEntity<int>
     {
         public int Quantity {  get; set; }
-        public double UnitPrice {  get; set; }
-        [ForeignKey("order")]
-        public int OrderID { get; set; }
-        public ICollection<Order > orders { get; set; }
-        [ForeignKey("Product")]
-        public int ProductID { get; set; }
-        public  ICollection <Product> Products { get; set; }
+        public decimal UnitPrice {  get; set; }
+        public int ProductId {  get; set; }
+        public Product Product { get; set; } = null!;
+        public int OrderId { get; set; }
+        public Order Order { get; set; } = null!;
+
     }
 }
