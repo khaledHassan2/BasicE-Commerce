@@ -9,15 +9,11 @@ namespace BasicE_Commerce.Models
 {
     public  class Cart: BaseEntity<int>
     {
-        public DateOnly CreateAt { get; set; }
-        [ForeignKey("User")]
+
+        public DateTime CreateAt { get; set; }= DateTime.Now;
         public int UserId { get; set; }
-        public User user { get; set; } 
-        public int CartItemId { get; set; }
-        public CartItem item { get; set; }
-        public int OrderId { get; set; }
-        public Order Order { get; set; }
-
-
+        public User User { get; set; }= null!;
+        public ICollection<CartItem>? CartItems { get; set; }
+        public ICollection<Order>? Orders { get; set; }
     }
 }

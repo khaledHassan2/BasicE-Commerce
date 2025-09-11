@@ -9,18 +9,11 @@ namespace BasicE_Commerce.Models
 {
     public class User:BaseEntity<int>
     {
-        public string Name { get; set; }
-        public string Email { get; set; }
-        public string Password { get; set; }
-
-        public string Role { get; set; }
-        [ForeignKey("Cart")]
-        public int? CartId { get; set; }
-        public ICollection<Cart> Carts { get; set; }
-        [ForeignKey("Order")]
-        public int ? orderId { get; set; }
-        public ICollection<order> Orders { get; set; }
-
-
+        public string Name { get; set; } = null!;
+        public string Email { get; set; }= null!;
+        public string Password { get; set; } = null!;
+        public string Role { get; set; } = "user";
+        public ICollection<Cart> Carts { get; set; } = new List<Cart>();
+        public ICollection<Order> Orders { get; set; } = new List<Order>();
     }
 }
