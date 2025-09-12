@@ -9,4 +9,10 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\BasicE-Commerce.Application\BasicE-Commerce.Application.csproj" />
+    <ProjectReference Include="..\BasicE-Commerce.InfraStructure\BasicE-Commerce.InfraStructure.csproj" />
+    <ProjectReference Include="..\Helpers\Helpers.csproj" />
+  </ItemGroup>
+
 </Project>

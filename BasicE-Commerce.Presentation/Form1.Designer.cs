@@ -28,12 +28,44 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            LoginBtn = new Button();
+            RegisterBtn = new Button();
+            SuspendLayout();
+            // 
+            // LoginBtn
+            // 
+            LoginBtn.Location = new Point(117, 241);
+            LoginBtn.Name = "LoginBtn";
+            LoginBtn.Size = new Size(256, 51);
+            LoginBtn.TabIndex = 0;
+            LoginBtn.Text = "Login";
+            LoginBtn.UseVisualStyleBackColor = true;
+            // 
+            // RegisterBtn
+            // 
+            RegisterBtn.Location = new Point(414, 244);
+            RegisterBtn.Name = "RegisterBtn";
+            RegisterBtn.Size = new Size(234, 48);
+            RegisterBtn.TabIndex = 1;
+            RegisterBtn.Text = "Register";
+            RegisterBtn.UseVisualStyleBackColor = true;
+            RegisterBtn.Click += RegisterBtn_Click;
+            // 
+            // Form1
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1006, 513);
+            Controls.Add(RegisterBtn);
+            Controls.Add(LoginBtn);
+            Name = "Form1";
+            Text = "Form1";
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private Button LoginBtn;
+        private Button RegisterBtn;
     }
 }
