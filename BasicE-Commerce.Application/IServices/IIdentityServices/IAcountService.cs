@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BasicE_Commerce.DTOs.OrderItem
+namespace BasicE_Commerce.Application.IServices.IIdentityServices
 {
-    public class AdminOrderItemDTO:OrderItemDTO
+    public interface IAcountService
     {
 
     }

@@ -18,10 +18,10 @@ namespace BasicE_Commerce.Context.Configurations
             builder.Property(u => u.Email).IsRequired().HasMaxLength(100);
             builder.Property(u => u.Password).IsRequired().HasMaxLength(100);
             builder.Property(u => u.Role).IsRequired().HasMaxLength(50).HasDefaultValue("user");
-            builder.HasData(
-               new User { Id = 1, Name = "Khaled Mahmoud", Email = "khaled@example.com", Password = "123456", Role = "user" },
-               new User { Id = 2, Name = "Ali Hassan", Email = "ali@example.com", Password = "123456", Role = "admin" }
-           );
+           // builder.HasData(
+           //    new User { Id = 1, Name = "Khaled Mahmoud", Email = "khaled@example.com", Password = "123456", Role = "user" },
+           //    new User { Id = 2, Name = "Ali Hassan", Email = "ali@example.com", Password = "123456", Role = "admin" }
+           //);
         }
     }
 }

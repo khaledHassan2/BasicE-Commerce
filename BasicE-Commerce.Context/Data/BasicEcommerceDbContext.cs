@@ -1,12 +1,6 @@
 ﻿using BasicE_Commerce.Models;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.IdentityModel.Protocols;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BasicE_Commerce.Context.Data
 {
@@ -17,8 +11,7 @@ namespace BasicE_Commerce.Context.Data
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
 
-            optionsBuilder.UseSqlServer(" Data Source =. ; Initial Catalog = itiBasicEcommerce ;Integrated Security=True;Connect Timeout=30;Encrypt=True;Trust Server Certificate=True;Application Intent=ReadWrite;Multi Subnet Failover=False");
-
+            optionsBuilder.UseSqlServer("Data Source=.;Initial Catalog=itiBasicEcommerce;Integrated Security=True;TrustServerCertificate=True;MultipleActiveResultSets=True");
             base.OnConfiguring(optionsBuilder);
         }
         protected override void OnModelCreating(ModelBuilder builder)

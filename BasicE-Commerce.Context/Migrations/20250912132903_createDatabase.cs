@@ -3,12 +3,10 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
-
 namespace BasicE_Commerce.Context.Migrations
 {
     /// <inheritdoc />
-    public partial class CreateDatabase : Migration
+    public partial class createDatabase : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -64,7 +62,7 @@ namespace BasicE_Commerce.Context.Migrations
                         column: x => x.CategoryId,
                         principalTable: "Categories",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.SetNull);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -168,63 +166,6 @@ namespace BasicE_Commerce.Context.Migrations
                         principalTable: "Products",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
-                });
-
-            migrationBuilder.InsertData(
-                table: "Categories",
-                columns: new[] { "Id", "Description", "Name" },
-                values: new object[,]
-                {
-                    { 1, "Electronic devices", "Electronics" },
-                    { 2, "Computer accessories", "Accessories" }
-                });
-
-            migrationBuilder.InsertData(
-                table: "User",
-                columns: new[] { "Id", "Email", "Name", "Password", "Role" },
-                values: new object[,]
-                {
-                    { 1, "khaled@example.com", "Khaled Mahmoud", "123456", "user" },
-                    { 2, "ali@example.com", "Ali Hassan", "123456", "admin" }
-                });
-
-            migrationBuilder.InsertData(
-                table: "Order",
-                columns: new[] { "Id", "CartId", "OrderDate", "Status", "UserId" },
-                values: new object[,]
-                {
-                    { 1, 1, new DateTime(2025, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Pending", 1 },
-                    { 2, 2, new DateTime(2025, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified), "Completed", 2 }
-                });
-
-            migrationBuilder.InsertData(
-                table: "Products",
-                columns: new[] { "Id", "CategoryId", "Description", "Image", "Name", "Price", "Stock" },
-                values: new object[,]
-                {
-                    { 1, 1, "High performance laptop", null, "Laptop", 1200m, 10 },
-                    { 2, 2, "Wireless mouse", null, "Mouse", 50m, 50 },
-                    { 3, 2, "Mechanical keyboard", null, "Keyboard", 100m, 30 }
-                });
-
-            migrationBuilder.InsertData(
-                table: "CartItem",
-                columns: new[] { "Id", "CartID", "ProductId", "Quantity" },
-                values: new object[,]
-                {
-                    { 1, 1, 1, 1 },
-                    { 2, 1, 2, 2 },
-                    { 3, 2, 3, 1 }
-                });
-
-            migrationBuilder.InsertData(
-                table: "OrderItem",
-                columns: new[] { "Id", "OrderId", "ProductId", "Quantity", "UnitPrice" },
-                values: new object[,]
-                {
-                    { 1, 1, 1, 1, 1200m },
-                    { 2, 1, 2, 2, 50m },
-                    { 3, 2, 3, 1, 100m }
                 });
 
             migrationBuilder.CreateIndex(

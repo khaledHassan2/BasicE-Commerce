@@ -12,10 +12,10 @@ namespace BasicE_Commerce.Context.Configurations
             builder.Property(o=>o.Status).IsRequired().HasMaxLength(25);
             builder.HasOne(o=>o.Cart).WithMany(c=>c.Orders).HasForeignKey(o=>o.CartId).OnDelete(DeleteBehavior.Restrict);
             builder.HasOne(o => o.User).WithMany(u => u.Orders).HasForeignKey(o => o.UserId).OnDelete(DeleteBehavior.Restrict);
-            builder.HasData(
-               new Order { Id = 1, UserId = 1, CartId = 1, OrderDate = new DateTime(2025, 1, 1), Status = "Pending" },
-               new Order { Id = 2, UserId = 2, CartId = 2, OrderDate = new DateTime(2025, 1, 2), Status = "Completed" }
-           );
+           // builder.HasData(
+           //    new Order { Id = 1, UserId = 1, CartId = 1, OrderDate = new DateTime(2025, 1, 1), Status = "Pending" },
+           //    new Order { Id = 2, UserId = 2, CartId = 2, OrderDate = new DateTime(2025, 1, 2), Status = "Completed" }
+           //);
         }
     }
 }

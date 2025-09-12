@@ -1,5 +1,6 @@
 ﻿using BasicE_Commerce.Application.Contacts;
 using BasicE_Commerce.DTOs.Cart;
+using BasicE_Commerce.DTOs.CartDTOs;
 using BasicE_Commerce.DTOs.CategoryDtos;
 using BasicE_Commerce.Models;
 using System;

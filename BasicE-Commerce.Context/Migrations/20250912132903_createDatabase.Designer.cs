@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BasicE_Commerce.Context.Migrations
 {
     [DbContext(typeof(BasicEcommerceDbContext))]
-    [Migration("20250912112624_CreateDatabase")]
-    partial class CreateDatabase
+    [Migration("20250912132903_createDatabase")]
+    partial class createDatabase
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -70,29 +70,6 @@ namespace BasicE_Commerce.Context.Migrations
                     b.HasIndex("ProductId");
 
                     b.ToTable("CartItem");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            CartID = 1,
-                            ProductId = 1,
-                            Quantity = 1
-                        },
-                        new
-                        {
-                            Id = 2,
-                            CartID = 1,
-                            ProductId = 2,
-                            Quantity = 2
-                        },
-                        new
-                        {
-                            Id = 3,
-                            CartID = 2,
-                            ProductId = 3,
-                            Quantity = 1
-                        });
                 });
 
             modelBuilder.Entity("BasicE_Commerce.Models.Category", b =>
@@ -115,20 +92,6 @@ namespace BasicE_Commerce.Context.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Categories");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Description = "Electronic devices",
-                            Name = "Electronics"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Description = "Computer accessories",
-                            Name = "Accessories"
-                        });
                 });
 
             modelBuilder.Entity("BasicE_Commerce.Models.Order", b =>
@@ -160,24 +123,6 @@ namespace BasicE_Commerce.Context.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Order");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            CartId = 1,
-                            OrderDate = new DateTime(2025, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Status = "Pending",
-                            UserId = 1
-                        },
-                        new
-                        {
-                            Id = 2,
-                            CartId = 2,
-                            OrderDate = new DateTime(2025, 1, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Status = "Completed",
-                            UserId = 2
-                        });
                 });
 
             modelBuilder.Entity("BasicE_Commerce.Models.OrderItem", b =>
@@ -207,32 +152,6 @@ namespace BasicE_Commerce.Context.Migrations
                     b.HasIndex("ProductId");
 
                     b.ToTable("OrderItem");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            OrderId = 1,
-                            ProductId = 1,
-                            Quantity = 1,
-                            UnitPrice = 1200m
-                        },
-                        new
-                        {
-                            Id = 2,
-                            OrderId = 1,
-                            ProductId = 2,
-                            Quantity = 2,
-                            UnitPrice = 50m
-                        },
-                        new
-                        {
-                            Id = 3,
-                            OrderId = 2,
-                            ProductId = 3,
-                            Quantity = 1,
-                            UnitPrice = 100m
-                        });
                 });
 
             modelBuilder.Entity("BasicE_Commerce.Models.Product", b =>
@@ -269,35 +188,6 @@ namespace BasicE_Commerce.Context.Migrations
                     b.HasIndex("CategoryId");
 
                     b.ToTable("Products");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            CategoryId = 1,
-                            Description = "High performance laptop",
-                            Name = "Laptop",
-                            Price = 1200m,
-                            Stock = 10
-                        },
-                        new
-                        {
-                            Id = 2,
-                            CategoryId = 2,
-                            Description = "Wireless mouse",
-                            Name = "Mouse",
-                            Price = 50m,
-                            Stock = 50
-                        },
-                        new
-                        {
-                            Id = 3,
-                            CategoryId = 2,
-                            Description = "Mechanical keyboard",
-                            Name = "Keyboard",
-                            Price = 100m,
-                            Stock = 30
-                        });
                 });
 
             modelBuilder.Entity("BasicE_Commerce.Models.User", b =>
@@ -333,24 +223,6 @@ namespace BasicE_Commerce.Context.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("User");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Email = "khaled@example.com",
-                            Name = "Khaled Mahmoud",
-                            Password = "123456",
-                            Role = "user"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Email = "ali@example.com",
-                            Name = "Ali Hassan",
-                            Password = "123456",
-                            Role = "admin"
-                        });
                 });
 
             modelBuilder.Entity("BasicE_Commerce.Models.Cart", b =>
@@ -426,7 +298,7 @@ namespace BasicE_Commerce.Context.Migrations
                     b.HasOne("BasicE_Commerce.Models.Category", "Category")
                         .WithMany("Products")
                         .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.SetNull)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Category");

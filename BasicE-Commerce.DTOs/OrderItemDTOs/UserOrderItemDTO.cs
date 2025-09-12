@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BasicE_Commerce.DTOs.OrderItem
+namespace BasicE_Commerce.DTOs.OrderItemDTOs
 {
     public  class UserOrderItemDTO:OrderItemDTO
     {
