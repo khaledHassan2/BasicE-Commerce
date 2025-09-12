@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BasicE_Commerce.DTOs.OrderDTOs
 {
-    public  class AdminOrder:OrderDTO
+    public  class AdminOrderDTO:OrderDTO
     {
     }
 }
