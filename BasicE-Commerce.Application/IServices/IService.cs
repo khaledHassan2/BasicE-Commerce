@@ -3,6 +3,6 @@
     public interface IService<TEntity,TKey,TEntityDto,TEntityCreatedDto,TRepository>
     {
         public ICollection<TEntityDto> GetAll();
-        public TEntityDto GetItemById();
+        public TEntityDto GetItemById(TKey id);
     }
 }

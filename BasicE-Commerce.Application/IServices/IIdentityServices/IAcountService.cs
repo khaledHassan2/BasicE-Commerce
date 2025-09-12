@@ -10,7 +10,7 @@ namespace BasicE_Commerce.Application.IServices.IIdentityServices
     public interface IAcountService
     {
         public void Regitser(UserCreatedDTO userDTO);
-        public void Login(LoginUserDTO userDTO);
+        public bool Login(LoginUserDTO userDTO);
         public void Logout();
     }
 }

@@ -2,6 +2,7 @@
 using BasicE_Commerce.Application.IServices.IIdentityServices;
 using BasicE_Commerce.DTOs.UserDTOs;
 using BasicE_Commerce.Models;
+using Helpers;
 using Mapster;
 using System;
 using System.Collections.Generic;
@@ -22,9 +23,22 @@ namespace BasicE_Commerce.Application.Services.IdentityServices
             _userRepository = userRepository;
         }
 
-        public void Login(LoginUserDTO userDTO)
+        public bool Login(LoginUserDTO userDTO)
         {
-            throw new NotImplementedException();
+            if (userDTO != null && userDTO.Password !=null)
+            {
+                var user = _userRepository.GetItem(filter : e =>e.Email == userDTO.Email);
+                if (user != null )
+                {
+                    if(userDTO.Password  == user.Password)
+                    {
+                        UserCookies.SaveCurrentUser(user.Id, user.Name,user.Email ,user.Password,user.Role);
+                        return true;
+                    }
+                }
+            }
+            return false;
+
         }
 
         public void Logout()

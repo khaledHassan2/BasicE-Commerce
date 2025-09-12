@@ -10,6 +10,7 @@
   <ItemGroup>
     <ProjectReference Include="..\BasicE-Commerce.DTOs\BasicE-Commerce.DTOs.csproj" />
     <ProjectReference Include="..\BasicE-Commerce.Models\BasicE-Commerce.Models.csproj" />
+    <ProjectReference Include="..\Helpers\Helpers.csproj" />
   </ItemGroup>
 
 </Project>

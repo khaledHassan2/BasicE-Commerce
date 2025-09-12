@@ -26,6 +26,7 @@ namespace BasicE_Commerce.Presentation
                 Password = RegisterPasswordInput.Text,
             };
             _acountService.Regitser(userCreatedDTO);
+            this.Close();
         }
     }
 }
