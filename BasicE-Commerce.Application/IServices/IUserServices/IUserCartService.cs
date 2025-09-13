@@ -4,7 +4,7 @@ using BasicE_Commerce.Models;
 
 namespace BasicE_Commerce.Application.IServices.IUserServices
 {
-    internal interface IUserCartService : IUserService<Cart, int, UserCartDTO, CartCreatedDTO, ICartRepository>
+    public interface IUserCartService : IUserService<Cart, int, UserCartDTO, CartCreatedDTO, ICartRepository>
     {
     }
 }

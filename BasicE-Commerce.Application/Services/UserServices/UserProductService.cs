@@ -1,0 +1,20 @@
+﻿using BasicE_Commerce.Application.Contacts;
+using BasicE_Commerce.Application.IServices.IUserServices;
+using BasicE_Commerce.DTOs.PtoductDTOs;
+using BasicE_Commerce.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace BasicE_Commerce.Application.Services.UserServices
+{
+    public class UserProductService : UserService<Product, int, UserProductDTO, ProductCreatedDTO, IProductRepository>,
+        IUserProductService
+    {
+        public UserProductService(IUnitOfWork unitOfWork, IGenericRepository<Product, int> repository) : base(unitOfWork, repository)
+        {
+        }
+    }
+}

@@ -4,7 +4,7 @@ using BasicE_Commerce.Models;
 
 namespace BasicE_Commerce.Application.IServices.IAdminServices
 {
-	public interface IAdminOrderItemService : IAdminService<OrderItem, int, OrderItemDTO, OrderItemCreatedDTO, IOrderItemRepository>
+	public interface IAdminOrderItemService : IAdminService<OrderItem, int, AdminOrderItemDTO, OrderItemCreatedDTO, IOrderItemRepository>
 	{
 	}
 }

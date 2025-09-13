@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace BasicE_Commerce.Application.Services.AdminServices
 {
-    public class AdminOrderItemService : AdminService<OrderItem, int, OrderItemDTO, OrderItemCreatedDTO, IOrderItemRepository>
+    public class AdminOrderItemService : AdminService<OrderItem, int, AdminOrderItemDTO, OrderItemCreatedDTO, IOrderItemRepository>
         , IAdminOrderItemService
     {
         public AdminOrderItemService(IUnitOfWork unitOfWork, IOrderItemRepository repository) : base(unitOfWork, repository)

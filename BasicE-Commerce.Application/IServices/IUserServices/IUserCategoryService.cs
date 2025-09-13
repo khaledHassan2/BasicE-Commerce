@@ -4,7 +4,7 @@ using BasicE_Commerce.Models;
 
 namespace BasicE_Commerce.Application.IServices.IUserServices
 {
-    internal interface IUserCategoryService : IUserService<Category,int,UserCategoryDTO,CategoryCreatedDTO,ICategoryRepository>
+    public interface IUserCategoryService : IUserService<Category,int,UserCategoryDTO,CategoryCreatedDTO,ICategoryRepository>
     {
     }
 }

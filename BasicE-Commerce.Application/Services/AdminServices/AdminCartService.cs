@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace BasicE_Commerce.Application.Services.AdminServices
 {
-    internal class AdminCartService : AdminService<Cart, int, CartDTO, CartCreatedDTO, ICartRepository>,
+    public class AdminCartService : AdminService<Cart, int, AdminCartDTO, CartCreatedDTO, ICartRepository>,
         IAdminCartService
     {
         public AdminCartService(IUnitOfWork unitOfWork, ICartRepository repository) : base(unitOfWork, repository)
