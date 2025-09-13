@@ -10,6 +10,7 @@ namespace BasicE_Commerce.Application.Contacts
 {
     public interface IGenericRepository<TEntity, TKey> where TEntity : BaseEntity<TKey>
     {
+        
         public void Create(TEntity entity);
         public void Update(TEntity entity);
         public void Delete(TEntity entity);

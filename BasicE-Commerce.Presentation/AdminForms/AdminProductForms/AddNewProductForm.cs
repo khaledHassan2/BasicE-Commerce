@@ -22,6 +22,11 @@ namespace BasicE_Commerce.Presentation.AdminForms.AdminProductForms
     {
         private readonly IAdminCategoryService _categoryService;
         private readonly List<AdminCategoryDTO> _categories;
+        private  int _CategoryIdSelected = 1;
+
+        private readonly IAdminProductService _productService;
+
+
         public AddNewProductForm()
         {
             InitializeComponent();
@@ -32,10 +37,16 @@ namespace BasicE_Commerce.Presentation.AdminForms.AdminProductForms
 
             _categoryService = new AdminCategoryService(unitOfWork, CategoryRepsoity);
             _categories = _categoryService.GetAll().ToList();
-
             CategoryOptionsList.DataSource = _categories;
+
             CategoryOptionsList.DisplayMember = "Name";
             CategoryOptionsList.ValueMember = "Id";
+
+            
+            var productRepsoity = new ProductRepository(dbContext);
+            _productService = new AdminProductService(unitOfWork, productRepsoity);
+
+
         }
 
         private void ProductUploadImageBtn_Click(object sender, EventArgs e)
@@ -53,6 +64,7 @@ namespace BasicE_Commerce.Presentation.AdminForms.AdminProductForms
         {
 
             //  CategoryOptionsList.DataSource = categories;
+            _CategoryIdSelected = (int)CategoryOptionsList.SelectedValue;
 
         }
 
@@ -64,9 +76,12 @@ namespace BasicE_Commerce.Presentation.AdminForms.AdminProductForms
                 Description = ProductDescriptionInput.Text,
                 Price = ProductPriceInput.Value,
                 Stock = (int)ProductStockInput.Value,
-                CategoryId = (int)CategoryOptionsList.SelectedItem,
-                Image = FileOperation.UploadFile(ProductImageBox.Image, "ProductImages")
+                CategoryId = _CategoryIdSelected,
+                Image = FileOperation.UploadImage(ProductImageBox.Image, "ProductImages")
             };
+            _productService.Create(entityCreated);
+            this.Close();
+
         }
     }
 }

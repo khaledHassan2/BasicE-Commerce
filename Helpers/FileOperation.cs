@@ -1,25 +1,30 @@
 ﻿using Microsoft.AspNetCore.Http;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using static System.Net.Mime.MediaTypeNames;
+
+using System.Drawing;
+using System.Drawing.Imaging;
 
 namespace Helpers
 {
     public static class FileOperation
     {
-        public static string UploadFile(IFormFile file, string FolderPath)
+        public static string? UploadImage(Image image, string folderPath)
         {
-            var fileName = Guid.NewGuid().ToString() + Path.GetExtension(file.FileName);
-            var filePath = Path.Combine(Directory.GetCurrentDirectory(), "./wwwroot\\Files\\Images", FolderPath, fileName);
-            using (var stream = System.IO.File.Create(filePath))
-            {
-                file.CopyTo(stream);
-            }
-            return fileName;
+            if (image == null)
+                return null;
+
+            var fileName = Guid.NewGuid().ToString() + ".jpg";
+            var saveDirectory = Path.Combine(Directory.GetCurrentDirectory(), "./wwwroot\\Files\\Images", folderPath);
+
+            if (!Directory.Exists(saveDirectory))
+                Directory.CreateDirectory(saveDirectory);
+
+            var savePath = Path.Combine(saveDirectory, fileName);
+
+            image.Save(savePath, ImageFormat.Jpeg);
+
+            return fileName; 
         }
+
 
 
 
