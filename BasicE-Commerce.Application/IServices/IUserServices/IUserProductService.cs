@@ -6,5 +6,6 @@ namespace BasicE_Commerce.Application.IServices.IUserServices
 {
     public interface IUserProductService : IUserService<Product, int, UserProductDTO, ProductCreatedDTO, IProductRepository>
     {
+        public List<UserProductDTO> GetProductsByCategory(int categoryId);
     }
 }

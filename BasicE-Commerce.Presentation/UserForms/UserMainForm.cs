@@ -27,7 +27,7 @@ namespace BasicE_Commerce.Presentation
         private int _CategoryIdSelected = 1;
 
         private readonly IUserProductService _ProductService;
-        private readonly List<UserProductDTO> _Products;
+        private List<UserProductDTO> _Products;
 
         public UserMainForm()
         {
@@ -57,7 +57,7 @@ namespace BasicE_Commerce.Presentation
 
         private void SearchCategoryBtn_Click(object sender, EventArgs e)
         {
-            _Products = _categoryService.GetAll().ToList();
+            _Products = _ProductService.GetProductsByCategory(_CategoryIdSelected).ToList();
         }
     }
 }
