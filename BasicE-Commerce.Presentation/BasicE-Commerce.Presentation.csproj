@@ -15,4 +15,9 @@
     <ProjectReference Include="..\Helpers\Helpers.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\Files\Images\ProductImages\" />
+    <Folder Include="wwwroot\Files\" />
+  </ItemGroup>
+
 </Project>

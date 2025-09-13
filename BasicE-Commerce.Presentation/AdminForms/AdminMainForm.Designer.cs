@@ -50,6 +50,7 @@
             ProductsBtn.TabIndex = 1;
             ProductsBtn.Text = "Products";
             ProductsBtn.UseVisualStyleBackColor = true;
+            ProductsBtn.Click += ProductsBtn_Click;
             // 
             // AdminMainForm
             // 
