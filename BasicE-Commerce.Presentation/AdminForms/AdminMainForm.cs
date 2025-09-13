@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BasicE_Commerce.Presentation.AdminForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,12 @@ namespace BasicE_Commerce.Presentation
         public AdminMainForm()
         {
             InitializeComponent();
+        }
+
+        private void CategoriesBtn_Click(object sender, EventArgs e)
+        {
+            AdminCategoriesForm adminCategoriesForm = new AdminCategoriesForm();
+            adminCategoriesForm.ShowDialog();
         }
     }
 }

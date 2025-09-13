@@ -12,7 +12,7 @@
         {
             CurrentUserId = id;
             CurrentUserName = name;
-            CurrentPassword = email;
+            Currentemail = email;
             CurrentPassword = password;
             CurrentRole = role;
         }

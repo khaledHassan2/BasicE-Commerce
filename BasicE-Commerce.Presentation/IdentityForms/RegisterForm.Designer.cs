@@ -58,6 +58,7 @@
             RegisterPasswordInput.Name = "RegisterPasswordInput";
             RegisterPasswordInput.Size = new Size(338, 27);
             RegisterPasswordInput.TabIndex = 2;
+            RegisterPasswordInput.UseSystemPasswordChar = true;
             // 
             // NameLbl
             // 

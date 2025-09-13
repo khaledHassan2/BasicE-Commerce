@@ -48,6 +48,7 @@
             LoginPasswordInput.Name = "LoginPasswordInput";
             LoginPasswordInput.Size = new Size(265, 27);
             LoginPasswordInput.TabIndex = 1;
+            LoginPasswordInput.UseSystemPasswordChar = true;
             // 
             // LoginEmailLbl
             // 
