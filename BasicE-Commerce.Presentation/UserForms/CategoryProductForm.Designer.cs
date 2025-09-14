@@ -58,8 +58,8 @@
             // profileToolStripMenuItem
             // 
             profileToolStripMenuItem.Name = "profileToolStripMenuItem";
-            profileToolStripMenuItem.Size = new Size(66, 24);
-            profileToolStripMenuItem.Text = "Profile";
+            profileToolStripMenuItem.Size = new Size(70, 24);
+            profileToolStripMenuItem.Text = "Logout";
             // 
             // myCartToolStripMenuItem
             // 

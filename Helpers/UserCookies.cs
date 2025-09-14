@@ -16,6 +16,14 @@
             CurrentPassword = password;
             CurrentRole = role;
         }
-        
+        public static void RemoveCurrentUser()
+        {
+            CurrentUserId = null;
+            CurrentUserName = null;
+            Currentemail = null;
+            CurrentPassword = null;
+            CurrentRole = null;
+        }
+
     }
 }

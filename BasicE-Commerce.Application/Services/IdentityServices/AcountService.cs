@@ -4,11 +4,6 @@ using BasicE_Commerce.DTOs.UserDTOs;
 using BasicE_Commerce.Models;
 using Helpers;
 using Mapster;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BasicE_Commerce.Application.Services.IdentityServices
 {
@@ -43,7 +38,7 @@ namespace BasicE_Commerce.Application.Services.IdentityServices
 
         public void Logout()
         {
-            throw new NotImplementedException();
+            UserCookies.RemoveCurrentUser();
         }
 
         public void Regitser(UserCreatedDTO userDTO)
