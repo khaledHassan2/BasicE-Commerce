@@ -32,7 +32,7 @@ namespace BasicE_Commerce.Presentation.UserForms
 
                 var panel = CreateCard(product.Id, saveDirectory, product.Name, product.Description, product.Price);
 
-                flowLayoutPanel1.Controls.Add(panel); // ✅ الكروت تضاف هنا
+                flowLayoutPanel1.Controls.Add(panel); 
             }
         }
 

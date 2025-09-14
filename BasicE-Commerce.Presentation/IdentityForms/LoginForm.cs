@@ -45,6 +45,10 @@ namespace BasicE_Commerce.Presentation
                     this.Close();
                 }
             }
+            else
+            {
+                MessageBox.Show("email or password is incorrect");
+            }
 
         }
 

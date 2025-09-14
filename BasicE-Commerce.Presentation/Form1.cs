@@ -23,6 +23,8 @@ namespace BasicE_Commerce.Presentation
         {
             LoginForm loginForm = new LoginForm();
             loginForm.Show();
+            
+            //this.Hide();
         }
     }
 }

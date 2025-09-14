@@ -44,7 +44,10 @@ namespace BasicE_Commerce.Presentation.UserForms
                 pic.Location = new Point(10, 10);
                 if (!string.IsNullOrEmpty(product.Image) && File.Exists(product.Image))
                 {
-                    pic.Image = Image.FromFile(product.Image);
+                    var saveDirectory = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
+                    "wwwroot", "Files", "Images", "ProductImages", product.Image);
+
+                    pic.Image = Image.FromFile(Path.Combine(saveDirectory));
                 }
                 else
                 {
