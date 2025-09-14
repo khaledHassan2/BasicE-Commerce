@@ -2,15 +2,15 @@
 {
     partial class UserMainForm
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        private System.Windows.Forms.Panel sidePanel;
+        private System.Windows.Forms.Button btnCategories;
+        private System.Windows.Forms.Button btnProducts;
+        private System.Windows.Forms.Button btnCart;
+        private System.Windows.Forms.Panel mainPanel;
+        private System.Windows.Forms.Label headerLabel;
+
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -21,65 +21,78 @@
         }
 
         #region Windows Form Designer generated code
-
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
-            CategoriesOptionsList = new ComboBox();
-            SearchCategoryBtn = new Button();
-            ChoiseCategoryLbl = new Label();
-            SuspendLayout();
+            this.sidePanel = new System.Windows.Forms.Panel();
+            this.btnProducts = new System.Windows.Forms.Button();
+            this.btnCategories = new System.Windows.Forms.Button();
+            this.mainPanel = new System.Windows.Forms.Panel();
+            this.headerLabel = new System.Windows.Forms.Label();
+            this.sidePanel.SuspendLayout();
+            this.SuspendLayout();
             // 
-            // CategoriesOptionsList
+            // sidePanel
             // 
-            CategoriesOptionsList.FormattingEnabled = true;
-            CategoriesOptionsList.Location = new Point(308, 181);
-            CategoriesOptionsList.Name = "CategoriesOptionsList";
-            CategoriesOptionsList.Size = new Size(317, 28);
-            CategoriesOptionsList.TabIndex = 0;
-            CategoriesOptionsList.SelectedIndexChanged += CategoriesOptionsList_SelectedIndexChanged;
+            this.sidePanel.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.sidePanel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.sidePanel.Width = 200;
+            this.sidePanel.Controls.Add(this.btnProducts);
+            this.sidePanel.Controls.Add(this.btnCategories);
             // 
-            // SearchCategoryBtn
+            // btnCategories
             // 
-            SearchCategoryBtn.Location = new Point(29, 181);
-            SearchCategoryBtn.Name = "SearchCategoryBtn";
-            SearchCategoryBtn.Size = new Size(239, 29);
-            SearchCategoryBtn.TabIndex = 1;
-            SearchCategoryBtn.Text = "Search";
-            SearchCategoryBtn.UseVisualStyleBackColor = true;
-            SearchCategoryBtn.Click += SearchCategoryBtn_Click;
+            this.btnCategories.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCategories.Height = 50;
+            this.btnCategories.Text = "Categories";
+            this.btnCategories.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCategories.Click += new System.EventHandler(this.btnCategories_Click);
             // 
-            // ChoiseCategoryLbl
+            // btnProducts
             // 
-            ChoiseCategoryLbl.AutoSize = true;
-            ChoiseCategoryLbl.Font = new Font("Simplified Arabic Fixed", 22.2F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            ChoiseCategoryLbl.Location = new Point(179, 64);
-            ChoiseCategoryLbl.Name = "ChoiseCategoryLbl";
-            ChoiseCategoryLbl.Size = new Size(365, 45);
-            ChoiseCategoryLbl.TabIndex = 2;
-            ChoiseCategoryLbl.Text = "Choise Category";
+            this.btnProducts.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnProducts.Height = 50;
+            this.btnProducts.Text = "Products";
+            this.btnProducts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProducts.Click += new System.EventHandler(this.btnProducts_Click);
+            // 
+            // btnCart
+            // 
+            this.btnCart = new System.Windows.Forms.Button();
+            this.btnCart.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCart.Height = 50;
+            this.btnCart.Text = "My Cart";
+            this.btnCart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCart.Click += new System.EventHandler(this.btnCart_Click);
+
+            // ضيفه للسلايد
+            this.sidePanel.Controls.Add(this.btnCart);
+            this.sidePanel.Controls.SetChildIndex(this.btnCart, 0);
+            // 
+            // mainPanel
+            // 
+            this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mainPanel.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.mainPanel.AutoScroll = true;
+            // 
+            // headerLabel
+            // 
+            this.headerLabel.Text = "Categories";
+            this.headerLabel.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
+            this.headerLabel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.headerLabel.Height = 60;
+            this.headerLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // UserMainForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(ChoiseCategoryLbl);
-            Controls.Add(SearchCategoryBtn);
-            Controls.Add(CategoriesOptionsList);
-            Name = "UserMainForm";
-            Text = "UserMainForm";
-            ResumeLayout(false);
-            PerformLayout();
+            this.ClientSize = new System.Drawing.Size(1000, 600);
+            this.Controls.Add(this.mainPanel);
+            this.Controls.Add(this.sidePanel);
+            this.Controls.Add(this.headerLabel);
+            this.Text = "User Main Form";
+            this.Load += new System.EventHandler(this.UserMainForm_Load);
+            this.sidePanel.ResumeLayout(false);
+            this.ResumeLayout(false);
         }
-
         #endregion
-
-        private ComboBox CategoriesOptionsList;
-        private Button SearchCategoryBtn;
-        private Label ChoiseCategoryLbl;
     }
 }
