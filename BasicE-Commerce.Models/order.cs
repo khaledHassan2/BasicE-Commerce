@@ -11,8 +11,6 @@ namespace BasicE_Commerce.Models
     {
         public DateTime  OrderDate {  get; set; }= DateTime.Now;
         public string Status { get; set; } = "Pending";
-        public int CartId { get; set; }
-        public Cart Cart { get; set; } = null!;
         public int UserId { get; set; }
         public User User { get; set; } = null!;
         public ICollection<OrderItem> OrderItems { get; set; } = new List<OrderItem>();

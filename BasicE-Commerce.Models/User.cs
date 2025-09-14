@@ -13,7 +13,6 @@ namespace BasicE_Commerce.Models
         public string Email { get; set; }= null!;
         public string Password { get; set; } = null!;
         public string Role { get; set; } = "user";
-        public ICollection<Cart> Carts { get; set; } = new List<Cart>();
         public ICollection<Order> Orders { get; set; } = new List<Order>();
     }
 }

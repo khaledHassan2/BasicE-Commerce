@@ -1,5 +1,4 @@
-﻿using BasicE_Commerce.DTOs.CartDTOs;
-using BasicE_Commerce.DTOs.CartItemDTOs;
+﻿
 using BasicE_Commerce.DTOs.CategoryDTOs;
 using BasicE_Commerce.DTOs.OrderDTOs;
 using BasicE_Commerce.DTOs.OrderItemDTOs;
@@ -14,18 +13,6 @@ namespace BasicE_Commerce.DTOs.mapping
     {
         public static void BasicECommerceMapsterConfiguration()
         {
-            TypeAdapterConfig<Cart, CartDTO>.NewConfig();
-            TypeAdapterConfig<Cart, AdminCartDTO>.NewConfig();
-            TypeAdapterConfig<Cart, UserCartDTO>.NewConfig();
-            TypeAdapterConfig<Cart, CartCreatedDTO>.NewConfig();
-
-
-            TypeAdapterConfig<CartItem, CartItemDTO>.NewConfig();
-            TypeAdapterConfig<CartItem, AdminCartItemDTO>.NewConfig();
-            TypeAdapterConfig<CartItem, UserCartItemDTO>.NewConfig();
-            TypeAdapterConfig<CartItem, CartItemCreatedDTO>.NewConfig();
-
-
             TypeAdapterConfig<Category, CategoryDTO>.NewConfig();
             TypeAdapterConfig<Category, AdminCategoryDTO>.NewConfig();
             TypeAdapterConfig<Category, UserCategoryDTO>.NewConfig();

@@ -8,6 +8,11 @@ namespace BasicE_Commerce.Context.Data
     {
         public DbSet<Category> Categories { get; set; }
         public DbSet<Product> Products { get; set; }
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderItem> OrderItems { get; set; }
+        public DbSet<User> Users { get; set; }
+
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
 
@@ -16,16 +21,8 @@ namespace BasicE_Commerce.Context.Data
         }
         protected override void OnModelCreating(ModelBuilder builder)
         {
-
-
-
             builder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
             base.OnModelCreating(builder);
-
-      
-
-            
-
 
         }
     }
