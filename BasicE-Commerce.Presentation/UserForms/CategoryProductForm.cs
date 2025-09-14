@@ -85,7 +85,7 @@ namespace BasicE_Commerce.Presentation.UserForms
             btnBuy.BackColor = Color.LightBlue;
             btnBuy.Click += (s, e) =>
             {
-                LocalCart.itemIds.Add(id);
+              //  LocalCart.itemIds.Add(id);
                 MessageBox.Show($"add {name} to Cart");
 
             };

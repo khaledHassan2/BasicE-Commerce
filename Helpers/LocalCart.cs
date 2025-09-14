@@ -1,8 +1,7 @@
 ﻿namespace Helpers
 {
     public static class LocalCart
-    {
-        public static List<int> itemIds = new List<int>();
-
+    { 
+       public static List<HCarteItem> carteItems = new List<HCarteItem>();
     }
 }

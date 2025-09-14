@@ -21,15 +21,15 @@ namespace BasicE_Commerce.Presentation.UserForms
             var productRepository = new ProductRepository(dbContext);
             _ProductService = new UserProductService(unitOfWork, productRepository);
 
-            if(LocalCart.itemIds.Count > 0)
-            {
+            //if(LocalCart.itemIds.Count > 0)
+            //{
                
-                foreach(var item in LocalCart.itemIds)
-                {
-                    var localProduct = _ProductService.GetItemById(item);
-                    _Products.Add(localProduct);
-                }
-            }
+            //    foreach(var item in LocalCart.itemIds)
+            //    {
+            //        var localProduct = _ProductService.GetItemById(item);
+            //        _Products.Add(localProduct);
+            //    }
+            //}
 
         }
     }
