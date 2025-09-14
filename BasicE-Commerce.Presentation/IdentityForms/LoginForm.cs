@@ -45,5 +45,11 @@ namespace BasicE_Commerce.Presentation
             }
 
         }
+
+        private void RegisterLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            RegisterForm registerForm = new RegisterForm();
+            registerForm.Show();
+        }
     }
 }
