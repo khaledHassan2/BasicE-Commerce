@@ -4,6 +4,7 @@ using BasicE_Commerce.Context.Data;
 using BasicE_Commerce.DTOs.PtoductDTOs;
 using BasicE_Commerce.InfraStructure;
 using BasicE_Commerce.InfraStructure.Repositories;
+using Helpers;
 using System.Windows.Forms;
 
 namespace BasicE_Commerce.Presentation.UserForms
@@ -22,22 +23,20 @@ namespace BasicE_Commerce.Presentation.UserForms
             var productRepository = new ProductRepository(dbContext);
             _ProductService = new UserProductService(unitOfWork, productRepository);
 
-            // جلب المنتجات
             _Products = _ProductService.GetProductsByCategory(CategoryId).ToList();
 
-            // عرض كل منتج في Card داخل FlowLayoutPanel
             foreach (var product in _Products)
             {
                 var saveDirectory = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
                     "wwwroot", "Files", "Images", "ProductImages", product.Image);
 
-                var panel = CreateCard(saveDirectory, product.Name, product.Description, product.Price);
+                var panel = CreateCard(product.Id, saveDirectory, product.Name, product.Description, product.Price);
 
                 flowLayoutPanel1.Controls.Add(panel); // ✅ الكروت تضاف هنا
             }
         }
 
-        private Panel CreateCard(string imagePath, string name, string description, decimal price)
+        private Panel CreateCard(int id, string imagePath, string name, string description, decimal price)
         {
             // الكارد نفسه
             Panel card = new Panel();
@@ -86,7 +85,9 @@ namespace BasicE_Commerce.Presentation.UserForms
             btnBuy.BackColor = Color.LightBlue;
             btnBuy.Click += (s, e) =>
             {
+                LocalCart.itemIds.Add(id);
                 MessageBox.Show($"add {name} to Cart");
+
             };
 
             // ترتيب العناصر داخل الكارد
@@ -97,6 +98,11 @@ namespace BasicE_Commerce.Presentation.UserForms
             card.Controls.Add(picture);
 
             return card;
+        }
+
+        private void myCartToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CartForm cartForm =new CartForm();
         }
     }
 }

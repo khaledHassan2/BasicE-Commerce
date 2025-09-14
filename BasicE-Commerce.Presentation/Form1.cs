@@ -1,4 +1,5 @@
 using BasicE_Commerce.DTOs.mapping;
+using System.Windows.Forms;
 
 namespace BasicE_Commerce.Presentation
 {
@@ -8,6 +9,8 @@ namespace BasicE_Commerce.Presentation
         {
             InitializeComponent();
             MapsterConfig.BasicECommerceMapsterConfiguration();
+
+           
         }
 
         private void RegisterBtn_Click(object sender, EventArgs e)
