@@ -88,6 +88,7 @@ namespace BasicE_Commerce.Presentation.UserForms
               //  LocalCart.itemIds.Add(id);
                 MessageBox.Show($"add {name} to Cart");
 
+
             };
 
             // ترتيب العناصر داخل الكارد
@@ -102,7 +103,8 @@ namespace BasicE_Commerce.Presentation.UserForms
 
         private void myCartToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            CartForm cartForm =new CartForm();
+            CartForm cartForm = new CartForm();
+            cartForm.Show();
         }
     }
 }
