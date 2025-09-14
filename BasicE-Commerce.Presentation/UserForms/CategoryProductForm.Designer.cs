@@ -66,6 +66,7 @@
             myCartToolStripMenuItem.Name = "myCartToolStripMenuItem";
             myCartToolStripMenuItem.Size = new Size(74, 24);
             myCartToolStripMenuItem.Text = "my Cart";
+            myCartToolStripMenuItem.Click += myCartToolStripMenuItem_Click;
             // 
             // myOrdersToolStripMenuItem
             // 
