@@ -1,6 +1,7 @@
 ﻿using BasicE_Commerce.Application.IServices.IIdentityServices;
 using BasicE_Commerce.Application.Services.IdentityServices;
 using BasicE_Commerce.Context.Data;
+using BasicE_Commerce.DTOs.mapping;
 using BasicE_Commerce.DTOs.UserDTOs;
 using BasicE_Commerce.InfraStructure;
 using BasicE_Commerce.InfraStructure.Repositories;
@@ -15,6 +16,7 @@ namespace BasicE_Commerce.Presentation
         public LoginForm()
         {
             InitializeComponent();
+            MapsterConfig.BasicECommerceMapsterConfiguration();
             var dbContext = new BasicEcommerceDbContext();
             _acountService = new AcountService(new UnitOfWork(dbContext), new UserRepository(dbContext));
 
