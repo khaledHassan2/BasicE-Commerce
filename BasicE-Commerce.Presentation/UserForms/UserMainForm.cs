@@ -5,7 +5,7 @@ using BasicE_Commerce.DTOs.CategoryDTOs;
 using BasicE_Commerce.DTOs.PtoductDTOs;
 using BasicE_Commerce.InfraStructure;
 using BasicE_Commerce.InfraStructure.Repositories;
-using BasicE_Commerce.Presentation.UserForms;
+//using BasicE_Commerce.Presentation.UserForms;
 using Helpers;
 using System;
 using System.Collections.Generic;
@@ -80,14 +80,14 @@ namespace BasicE_Commerce.Presentation
                 card.Cursor = Cursors.Hand;
                 card.Click += (s, e) =>
                 {
-                    var productForm = new UserForms.CategoryProductForm(category.Id);
-                    productForm.Show();
+                    headerLabel.Text = $"{category.Name} Products";
+                    LoadProductsByCategory(category.Id);
                 };
 
                 lbl.Click += (s, e) =>
                 {
-                    var productForm = new UserForms.CategoryProductForm(category.Id);
-                    productForm.Show();
+                    headerLabel.Text = $"{category.Name} Products";
+                    LoadProductsByCategory(category.Id);
                 };
 
                 card.Controls.Add(lbl);
@@ -97,8 +97,91 @@ namespace BasicE_Commerce.Presentation
             mainPanel.Controls.Add(flow);
         }
 
+        //private void LoadProductsByCategory(int categoryId)
+        //{
+        //    mainPanel.Controls.Clear();
 
-    
+        //    // زر الرجوع
+        //    Button btnBack = new Button();
+        //    btnBack.Text = "← Back to Categories";
+        //    btnBack.Height = 40;
+        //    btnBack.Dock = DockStyle.Top;
+        //    btnBack.BackColor = Color.LightGray;
+        //    btnBack.Click += (s, e) =>
+        //    {
+        //        headerLabel.Text = "Categories";
+        //        LoadCategories();
+        //    };
+        //    mainPanel.Controls.Add(btnBack);
+
+        //    var products = _productService.GetAll()
+        //        .Where(p => p.CategoryId == categoryId)
+        //        .ToList();
+
+        //    FlowLayoutPanel flow = new FlowLayoutPanel();
+        //    flow.Dock = DockStyle.Fill;
+        //    flow.AutoScroll = true;
+
+        //    foreach (var product in products)
+        //    {
+        //        var saveDirectory = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
+        //            "wwwroot", "Files", "Images", "ProductImages", product.Image);
+
+        //        var card = CreateProductCard(product.Id, saveDirectory, product.Name, product.Description, product.Price);
+        //        flow.Controls.Add(card);
+        //    }
+
+        //    mainPanel.Controls.Add(flow);
+        //}
+        private void LoadProductsByCategory(int categoryId)
+        {
+            mainPanel.Controls.Clear();
+
+            // Panel رئيسي يحتوي على زر الرجوع + الكروت
+            Panel container = new Panel();
+            container.Dock = DockStyle.Fill;
+            container.AutoScroll = true;
+
+            // زر الرجوع
+            Button btnBack = new Button();
+            btnBack.Text = "← Back to Categories";
+            btnBack.Height = 40;
+            btnBack.Dock = DockStyle.Top;
+            btnBack.BackColor = Color.LightGray;
+            btnBack.Click += (s, e) =>
+            {
+                headerLabel.Text = "Categories";
+                LoadCategories();
+            };
+
+            // FlowLayoutPanel للكروت
+            FlowLayoutPanel flow = new FlowLayoutPanel();
+            flow.Dock = DockStyle.Fill;
+            flow.AutoScroll = true;
+
+            var products = _productService.GetAll()
+                .Where(p => p.CategoryId == categoryId)
+                .ToList();
+
+            foreach (var product in products)
+            {
+                var saveDirectory = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
+                    "wwwroot", "Files", "Images", "ProductImages", product.Image);
+
+                var card = CreateProductCard(product.Id, saveDirectory, product.Name, product.Description, product.Price);
+                flow.Controls.Add(card);
+            }
+
+            // ربط المكونات
+            container.Controls.Add(flow);
+            container.Controls.Add(btnBack);
+
+            // عرض في المين بانيل
+            mainPanel.Controls.Add(container);
+        }
+
+
+
         private void LoadProducts()
         {
             mainPanel.Controls.Clear();

@@ -23,76 +23,107 @@
         #region Windows Form Designer generated code
         private void InitializeComponent()
         {
-            this.sidePanel = new System.Windows.Forms.Panel();
-            this.btnProducts = new System.Windows.Forms.Button();
-            this.btnCategories = new System.Windows.Forms.Button();
-            this.mainPanel = new System.Windows.Forms.Panel();
-            this.headerLabel = new System.Windows.Forms.Label();
-            this.sidePanel.SuspendLayout();
-            this.SuspendLayout();
+            sidePanel = new Panel();
+            btnProducts = new Button();
+            btnCategories = new Button();
+            btnCart = new Button();
+            mainPanel = new Panel();
+            headerLabel = new Label();
+            button1 = new Button();
+            sidePanel.SuspendLayout();
+            SuspendLayout();
             // 
             // sidePanel
             // 
-            this.sidePanel.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.sidePanel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.sidePanel.Width = 200;
-            this.sidePanel.Controls.Add(this.btnProducts);
-            this.sidePanel.Controls.Add(this.btnCategories);
-            // 
-            // btnCategories
-            // 
-            this.btnCategories.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnCategories.Height = 50;
-            this.btnCategories.Text = "Categories";
-            this.btnCategories.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCategories.Click += new System.EventHandler(this.btnCategories_Click);
+            sidePanel.BackColor = Color.LightSteelBlue;
+            sidePanel.Controls.Add(button1);
+            sidePanel.Controls.Add(btnCart);
+            sidePanel.Controls.Add(btnProducts);
+            sidePanel.Controls.Add(btnCategories);
+            sidePanel.Dock = DockStyle.Left;
+            sidePanel.Location = new Point(0, 60);
+            sidePanel.Name = "sidePanel";
+            sidePanel.Size = new Size(200, 540);
+            sidePanel.TabIndex = 1;
             // 
             // btnProducts
             // 
-            this.btnProducts.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnProducts.Height = 50;
-            this.btnProducts.Text = "Products";
-            this.btnProducts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProducts.Click += new System.EventHandler(this.btnProducts_Click);
+            btnProducts.Dock = DockStyle.Top;
+            btnProducts.FlatStyle = FlatStyle.Flat;
+            btnProducts.Location = new Point(0, 50);
+            btnProducts.Name = "btnProducts";
+            btnProducts.Size = new Size(200, 50);
+            btnProducts.TabIndex = 0;
+            btnProducts.Text = "Products";
+            btnProducts.Click += btnProducts_Click;
+            // 
+            // btnCategories
+            // 
+            btnCategories.Dock = DockStyle.Top;
+            btnCategories.FlatStyle = FlatStyle.Flat;
+            btnCategories.Location = new Point(0, 0);
+            btnCategories.Name = "btnCategories";
+            btnCategories.Size = new Size(200, 50);
+            btnCategories.TabIndex = 1;
+            btnCategories.Text = "Categories";
+            btnCategories.Click += btnCategories_Click;
             // 
             // btnCart
             // 
-            this.btnCart = new System.Windows.Forms.Button();
-            this.btnCart.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnCart.Height = 50;
-            this.btnCart.Text = "My Cart";
-            this.btnCart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCart.Click += new System.EventHandler(this.btnCart_Click);
-
-            // ضيفه للسلايد
-            this.sidePanel.Controls.Add(this.btnCart);
-            this.sidePanel.Controls.SetChildIndex(this.btnCart, 0);
+            btnCart.Dock = DockStyle.Top;
+            btnCart.FlatStyle = FlatStyle.Flat;
+            btnCart.Location = new Point(0, 100);
+            btnCart.Name = "btnCart";
+            btnCart.Size = new Size(200, 50);
+            btnCart.TabIndex = 2;
+            btnCart.Text = "My Cart";
+            btnCart.Click += btnCart_Click;
             // 
             // mainPanel
             // 
-            this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mainPanel.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.mainPanel.AutoScroll = true;
+            mainPanel.AutoScroll = true;
+            mainPanel.BackColor = Color.WhiteSmoke;
+            mainPanel.Dock = DockStyle.Fill;
+            mainPanel.Location = new Point(200, 60);
+            mainPanel.Name = "mainPanel";
+            mainPanel.Size = new Size(800, 540);
+            mainPanel.TabIndex = 0;
             // 
             // headerLabel
             // 
-            this.headerLabel.Text = "Categories";
-            this.headerLabel.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
-            this.headerLabel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.headerLabel.Height = 60;
-            this.headerLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            headerLabel.Dock = DockStyle.Top;
+            headerLabel.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
+            headerLabel.Location = new Point(0, 0);
+            headerLabel.Name = "headerLabel";
+            headerLabel.Size = new Size(1000, 60);
+            headerLabel.TabIndex = 2;
+            headerLabel.Text = "Categories";
+            headerLabel.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // button1
+            // 
+            button1.Dock = DockStyle.Top;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Location = new Point(0, 150);
+            button1.Name = "button1";
+            button1.Size = new Size(200, 50);
+            button1.TabIndex = 3;
+            button1.Text = "My Order";
             // 
             // UserMainForm
             // 
-            this.ClientSize = new System.Drawing.Size(1000, 600);
-            this.Controls.Add(this.mainPanel);
-            this.Controls.Add(this.sidePanel);
-            this.Controls.Add(this.headerLabel);
-            this.Text = "User Main Form";
-            this.Load += new System.EventHandler(this.UserMainForm_Load);
-            this.sidePanel.ResumeLayout(false);
-            this.ResumeLayout(false);
+            ClientSize = new Size(1000, 600);
+            Controls.Add(mainPanel);
+            Controls.Add(sidePanel);
+            Controls.Add(headerLabel);
+            Name = "UserMainForm";
+            Text = "User Main Form";
+            Load += UserMainForm_Load;
+            sidePanel.ResumeLayout(false);
+            ResumeLayout(false);
         }
         #endregion
+
+        private Button button1;
     }
 }
