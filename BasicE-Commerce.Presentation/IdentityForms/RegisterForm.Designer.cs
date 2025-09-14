@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegisterForm));
             RegisterNameInput = new TextBox();
             RegisterEmailInput = new TextBox();
             RegisterPasswordInput = new TextBox();
@@ -118,7 +119,7 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources.icons8_register_100;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(369, 12);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(372, 306);

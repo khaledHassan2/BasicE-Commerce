@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             LoginEmailInput = new TextBox();
             LoginPasswordInput = new TextBox();
             LoginEmailLbl = new Label();
@@ -92,7 +93,7 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = Properties.Resources.vecteezy_3d_illustration_of_a_teenage_female_programmer_at_the_35899074;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(12, 12);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(441, 285);
@@ -102,7 +103,7 @@
             // 
             // pictureBox3
             // 
-            pictureBox3.Image = Properties.Resources.icons8_user_48;
+            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
             pictureBox3.Location = new Point(768, 79);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(35, 26);
@@ -112,7 +113,7 @@
             // 
             // pictureBox2
             // 
-            pictureBox2.Image = Properties.Resources.icons8_key_64;
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
             pictureBox2.Location = new Point(768, 149);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(35, 26);
