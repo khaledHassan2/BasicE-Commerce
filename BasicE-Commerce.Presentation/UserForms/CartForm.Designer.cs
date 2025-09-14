@@ -31,7 +31,7 @@
             menuStrip1 = new MenuStrip();
             logoutToolStripMenuItem = new ToolStripMenuItem();
             loadToolStripMenuItem = new ToolStripMenuItem();
-            listBoxCart = new ListBox();
+            flowCart = new FlowLayoutPanel();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -59,20 +59,20 @@
             loadToolStripMenuItem.Text = "Load";
             loadToolStripMenuItem.Click += loadToolStripMenuItem_Click;
             // 
-            // listBoxCart
+            // flowCart
             // 
-            listBoxCart.FormattingEnabled = true;
-            listBoxCart.Location = new Point(82, 50);
-            listBoxCart.Name = "listBoxCart";
-            listBoxCart.Size = new Size(120, 94);
-            listBoxCart.TabIndex = 1;
+            flowCart.Dock = DockStyle.Fill;
+            flowCart.Location = new Point(0, 24);
+            flowCart.Name = "flowCart";
+            flowCart.Size = new Size(700, 314);
+            flowCart.TabIndex = 1;
             // 
             // CartForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(700, 338);
-            Controls.Add(listBoxCart);
+            Controls.Add(flowCart);
             Controls.Add(menuStrip1);
             MainMenuStrip = menuStrip1;
             Margin = new Padding(3, 2, 3, 2);
@@ -89,6 +89,6 @@
         private MenuStrip menuStrip1;
         private ToolStripMenuItem logoutToolStripMenuItem;
         private ToolStripMenuItem loadToolStripMenuItem;
-        private ListBox listBoxCart;
+        private FlowLayoutPanel flowCart;
     }
 }
