@@ -52,100 +52,119 @@
             // 
             AddNewProductLbl.AutoSize = true;
             AddNewProductLbl.Font = new Font("Simplified Arabic Fixed", 28.2F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            AddNewProductLbl.Location = new Point(191, 27);
+            AddNewProductLbl.Location = new Point(343, 27);
+            AddNewProductLbl.Margin = new Padding(5, 0, 5, 0);
             AddNewProductLbl.Name = "AddNewProductLbl";
-            AddNewProductLbl.Size = new Size(459, 56);
+            AddNewProductLbl.Size = new Size(380, 47);
             AddNewProductLbl.TabIndex = 0;
             AddNewProductLbl.Text = "Add New Product";
             // 
             // ProductNameinput
             // 
-            ProductNameinput.Location = new Point(151, 105);
+            ProductNameinput.BorderStyle = BorderStyle.FixedSingle;
+            ProductNameinput.Location = new Point(194, 117);
+            ProductNameinput.Margin = new Padding(5, 3, 5, 3);
             ProductNameinput.Name = "ProductNameinput";
-            ProductNameinput.Size = new Size(291, 27);
+            ProductNameinput.Size = new Size(418, 29);
             ProductNameinput.TabIndex = 1;
             // 
             // ProductDescriptionInput
             // 
-            ProductDescriptionInput.Location = new Point(151, 167);
+            ProductDescriptionInput.BorderStyle = BorderStyle.FixedSingle;
+            ProductDescriptionInput.Location = new Point(194, 177);
+            ProductDescriptionInput.Margin = new Padding(5, 3, 5, 3);
             ProductDescriptionInput.Multiline = true;
             ProductDescriptionInput.Name = "ProductDescriptionInput";
-            ProductDescriptionInput.Size = new Size(291, 63);
+            ProductDescriptionInput.Size = new Size(418, 69);
             ProductDescriptionInput.TabIndex = 2;
             // 
             // ProductNameLbl
             // 
             ProductNameLbl.AutoSize = true;
-            ProductNameLbl.Location = new Point(32, 108);
+            ProductNameLbl.Location = new Point(50, 117);
+            ProductNameLbl.Margin = new Padding(5, 0, 5, 0);
             ProductNameLbl.Name = "ProductNameLbl";
-            ProductNameLbl.Size = new Size(49, 20);
+            ProductNameLbl.Size = new Size(54, 22);
             ProductNameLbl.TabIndex = 5;
             ProductNameLbl.Text = "Name";
             // 
             // ProuctDescriptionLbl
             // 
             ProuctDescriptionLbl.AutoSize = true;
-            ProuctDescriptionLbl.Location = new Point(12, 170);
+            ProuctDescriptionLbl.Location = new Point(26, 196);
+            ProuctDescriptionLbl.Margin = new Padding(5, 0, 5, 0);
             ProuctDescriptionLbl.Name = "ProuctDescriptionLbl";
-            ProuctDescriptionLbl.Size = new Size(85, 20);
+            ProuctDescriptionLbl.Size = new Size(131, 22);
             ProuctDescriptionLbl.TabIndex = 6;
             ProuctDescriptionLbl.Text = "Description";
             // 
             // StockLbl
             // 
             StockLbl.AutoSize = true;
-            StockLbl.Location = new Point(32, 261);
+            StockLbl.Location = new Point(44, 287);
+            StockLbl.Margin = new Padding(5, 0, 5, 0);
             StockLbl.Name = "StockLbl";
-            StockLbl.Size = new Size(45, 20);
+            StockLbl.Size = new Size(65, 22);
             StockLbl.TabIndex = 7;
             StockLbl.Text = "Stock";
             // 
             // PriceLbl
             // 
             PriceLbl.AutoSize = true;
-            PriceLbl.Location = new Point(36, 327);
+            PriceLbl.Location = new Point(50, 359);
+            PriceLbl.Margin = new Padding(5, 0, 5, 0);
             PriceLbl.Name = "PriceLbl";
-            PriceLbl.Size = new Size(41, 20);
+            PriceLbl.Size = new Size(65, 22);
             PriceLbl.TabIndex = 8;
             PriceLbl.Text = "Price";
             // 
             // ProductStockInput
             // 
-            ProductStockInput.Location = new Point(151, 272);
+            ProductStockInput.BorderStyle = BorderStyle.FixedSingle;
+            ProductStockInput.Location = new Point(194, 287);
+            ProductStockInput.Margin = new Padding(5, 3, 5, 3);
             ProductStockInput.Name = "ProductStockInput";
-            ProductStockInput.Size = new Size(291, 27);
+            ProductStockInput.Size = new Size(418, 29);
             ProductStockInput.TabIndex = 9;
             // 
             // ProductPriceInput
             // 
             ProductPriceInput.DecimalPlaces = 2;
-            ProductPriceInput.Location = new Point(151, 327);
+            ProductPriceInput.Location = new Point(194, 359);
+            ProductPriceInput.Margin = new Padding(5, 3, 5, 3);
             ProductPriceInput.Name = "ProductPriceInput";
-            ProductPriceInput.Size = new Size(291, 27);
+            ProductPriceInput.Size = new Size(418, 29);
             ProductPriceInput.TabIndex = 10;
             // 
             // ProductImageBox
             // 
-            ProductImageBox.Location = new Point(555, 86);
+            ProductImageBox.BackColor = SystemColors.InactiveBorder;
+            ProductImageBox.BorderStyle = BorderStyle.FixedSingle;
+            ProductImageBox.Location = new Point(785, 117);
+            ProductImageBox.Margin = new Padding(5, 3, 5, 3);
             ProductImageBox.Name = "ProductImageBox";
-            ProductImageBox.Size = new Size(166, 62);
+            ProductImageBox.Size = new Size(228, 67);
             ProductImageBox.TabIndex = 11;
             ProductImageBox.TabStop = false;
             // 
             // ProductImageLbl
             // 
             ProductImageLbl.AutoSize = true;
-            ProductImageLbl.Location = new Point(472, 167);
+            ProductImageLbl.Location = new Point(694, 233);
+            ProductImageLbl.Margin = new Padding(5, 0, 5, 0);
             ProductImageLbl.Name = "ProductImageLbl";
-            ProductImageLbl.Size = new Size(51, 20);
+            ProductImageLbl.Size = new Size(65, 22);
             ProductImageLbl.TabIndex = 12;
             ProductImageLbl.Text = "Image";
+            ProductImageLbl.Click += ProductImageLbl_Click;
             // 
             // ProductUploadImageBtn
             // 
-            ProductUploadImageBtn.Location = new Point(565, 170);
+            ProductUploadImageBtn.ForeColor = SystemColors.ActiveCaptionText;
+            ProductUploadImageBtn.Location = new Point(796, 223);
+            ProductUploadImageBtn.Margin = new Padding(5, 3, 5, 3);
             ProductUploadImageBtn.Name = "ProductUploadImageBtn";
-            ProductUploadImageBtn.Size = new Size(139, 29);
+            ProductUploadImageBtn.Size = new Size(192, 32);
             ProductUploadImageBtn.TabIndex = 13;
             ProductUploadImageBtn.Text = "Uplaod Image";
             ProductUploadImageBtn.UseVisualStyleBackColor = true;
@@ -154,26 +173,30 @@
             // CategoryOptionsList
             // 
             CategoryOptionsList.FormattingEnabled = true;
-            CategoryOptionsList.Location = new Point(555, 253);
+            CategoryOptionsList.Location = new Point(796, 317);
+            CategoryOptionsList.Margin = new Padding(5, 3, 5, 3);
             CategoryOptionsList.Name = "CategoryOptionsList";
-            CategoryOptionsList.Size = new Size(151, 28);
+            CategoryOptionsList.Size = new Size(207, 30);
             CategoryOptionsList.TabIndex = 14;
             CategoryOptionsList.SelectedIndexChanged += CategoryOptionsList_SelectedIndexChanged;
             // 
             // CategoriesOptionListLbl
             // 
             CategoriesOptionListLbl.AutoSize = true;
-            CategoriesOptionListLbl.Location = new Point(469, 256);
+            CategoriesOptionListLbl.Location = new Point(656, 320);
+            CategoriesOptionListLbl.Margin = new Padding(5, 0, 5, 0);
             CategoriesOptionListLbl.Name = "CategoriesOptionListLbl";
-            CategoriesOptionListLbl.Size = new Size(80, 20);
+            CategoriesOptionListLbl.Size = new Size(120, 22);
             CategoriesOptionListLbl.TabIndex = 15;
             CategoriesOptionListLbl.Text = "Categories";
             // 
             // SaveNewProductBtn
             // 
-            SaveNewProductBtn.Location = new Point(264, 397);
+            SaveNewProductBtn.ForeColor = Color.Black;
+            SaveNewProductBtn.Location = new Point(400, 440);
+            SaveNewProductBtn.Margin = new Padding(5, 3, 5, 3);
             SaveNewProductBtn.Name = "SaveNewProductBtn";
-            SaveNewProductBtn.Size = new Size(244, 29);
+            SaveNewProductBtn.Size = new Size(336, 32);
             SaveNewProductBtn.TabIndex = 16;
             SaveNewProductBtn.Text = "Add";
             SaveNewProductBtn.UseVisualStyleBackColor = true;
@@ -181,9 +204,10 @@
             // 
             // AddNewProductForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(11F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            BackColor = Color.Teal;
+            ClientSize = new Size(1100, 496);
             Controls.Add(SaveNewProductBtn);
             Controls.Add(CategoriesOptionListLbl);
             Controls.Add(CategoryOptionsList);
@@ -199,6 +223,9 @@
             Controls.Add(ProductDescriptionInput);
             Controls.Add(ProductNameinput);
             Controls.Add(AddNewProductLbl);
+            Font = new Font("Courier New", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            ForeColor = SystemColors.ButtonHighlight;
+            Margin = new Padding(5, 3, 5, 3);
             Name = "AddNewProductForm";
             Text = "AddNewProductForm";
             ((System.ComponentModel.ISupportInitialize)ProductStockInput).EndInit();

@@ -13,7 +13,7 @@ namespace BasicE_Commerce.Presentation.AdminForms.AdminProductForms
     {
         private readonly IAdminCategoryService _categoryService;
         private readonly List<AdminCategoryDTO> _categories;
-        private  int _CategoryIdSelected = 1;
+        private int _CategoryIdSelected = 1;
 
         private readonly IAdminProductService _productService;
 
@@ -33,7 +33,7 @@ namespace BasicE_Commerce.Presentation.AdminForms.AdminProductForms
             CategoryOptionsList.DisplayMember = "Name";
             CategoryOptionsList.ValueMember = "Id";
 
-            
+
             var productRepsoity = new ProductRepository(dbContext);
             _productService = new AdminProductService(unitOfWork, productRepsoity);
 
@@ -72,6 +72,11 @@ namespace BasicE_Commerce.Presentation.AdminForms.AdminProductForms
             };
             _productService.Create(entityCreated);
             this.Close();
+
+        }
+
+        private void ProductImageLbl_Click(object sender, EventArgs e)
+        {
 
         }
     }

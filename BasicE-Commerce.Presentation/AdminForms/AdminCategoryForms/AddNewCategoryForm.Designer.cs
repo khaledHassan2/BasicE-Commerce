@@ -36,9 +36,7 @@
             CategoryDescriptionLbl = new Label();
             SaveNewCategoryBtn = new Button();
             pictureBox1 = new PictureBox();
-            pictureBox2 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // CategoryNameinput
@@ -92,7 +90,7 @@
             // SaveNewCategoryBtn
             // 
             SaveNewCategoryBtn.ForeColor = Color.DarkOliveGreen;
-            SaveNewCategoryBtn.Location = new Point(818, 405);
+            SaveNewCategoryBtn.Location = new Point(787, 405);
             SaveNewCategoryBtn.Margin = new Padding(5, 3, 5, 3);
             SaveNewCategoryBtn.Name = "SaveNewCategoryBtn";
             SaveNewCategoryBtn.Size = new Size(126, 50);
@@ -112,24 +110,12 @@
             pictureBox1.TabStop = false;
             pictureBox1.Click += pictureBox1_Click;
             // 
-            // pictureBox2
-            // 
-            pictureBox2.BackColor = Color.White;
-            pictureBox2.Image = Properties.Resources.AddImage__1_;
-            pictureBox2.Location = new Point(712, 405);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(52, 50);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 7;
-            pictureBox2.TabStop = false;
-            // 
             // AddNewCategoryForm
             // 
             AutoScaleDimensions = new SizeF(11F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Teal;
             ClientSize = new Size(1100, 496);
-            Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
             Controls.Add(SaveNewCategoryBtn);
             Controls.Add(CategoryDescriptionLbl);
@@ -143,7 +129,6 @@
             Name = "AddNewCategoryForm";
             Text = "AddNewCategoryForm";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -157,6 +142,5 @@
         private Label CategoryDescriptionLbl;
         private Button SaveNewCategoryBtn;
         private PictureBox pictureBox1;
-        private PictureBox pictureBox2;
     }
 }
