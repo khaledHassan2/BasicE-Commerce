@@ -42,9 +42,9 @@
             sidePanel.Controls.Add(btnProducts);
             sidePanel.Controls.Add(btnCategories);
             sidePanel.Dock = DockStyle.Left;
-            sidePanel.Location = new Point(0, 60);
+            sidePanel.Location = new Point(0, 40);
             sidePanel.Name = "sidePanel";
-            sidePanel.Size = new Size(200, 540);
+            sidePanel.Size = new Size(200, 391);
             sidePanel.TabIndex = 1;
             // 
             // button1
@@ -95,9 +95,9 @@
             mainPanel.AutoScroll = true;
             mainPanel.BackColor = Color.WhiteSmoke;
             mainPanel.Dock = DockStyle.Fill;
-            mainPanel.Location = new Point(200, 60);
+            mainPanel.Location = new Point(200, 40);
             mainPanel.Name = "mainPanel";
-            mainPanel.Size = new Size(800, 540);
+            mainPanel.Size = new Size(800, 391);
             mainPanel.TabIndex = 0;
             // 
             // headerLabel
@@ -106,14 +106,15 @@
             headerLabel.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
             headerLabel.Location = new Point(0, 0);
             headerLabel.Name = "headerLabel";
-            headerLabel.Size = new Size(1000, 60);
+            headerLabel.Size = new Size(1000, 40);
             headerLabel.TabIndex = 2;
             headerLabel.Text = "Categories";
             headerLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // button2
             // 
-            button2.Location = new Point(357, 566);
+            button2.Anchor = AnchorStyles.Bottom;
+            button2.Location = new Point(395, 398);
             button2.Name = "button2";
             button2.Size = new Size(362, 23);
             button2.TabIndex = 3;
@@ -122,7 +123,7 @@
             // 
             // UserMainForm
             // 
-            ClientSize = new Size(1000, 600);
+            ClientSize = new Size(1000, 431);
             Controls.Add(button2);
             Controls.Add(mainPanel);
             Controls.Add(sidePanel);
