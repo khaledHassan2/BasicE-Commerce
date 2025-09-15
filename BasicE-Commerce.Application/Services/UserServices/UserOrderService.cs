@@ -16,13 +16,19 @@ namespace BasicE_Commerce.Application.Services.UserServices
             _orderRepository = repository;
             _unitOfWork = unitOfWork;
         }
-
         public int CreateOrder(OrderCreatedDTO orderCreatedDTO)
         {
             var order = orderCreatedDTO.Adapt<Order>();
             _orderRepository.Create(order);
             _unitOfWork.Commit();
             return order.Id;
+        }
+
+        public List<UserOrderDTO> getOrdersByUserId(int userId)
+        {
+            var orders = _orderRepository.Get(filter: e => e.UserId == userId);
+            var ordersDto = orders.Adapt<List<UserOrderDTO>>();
+            return ordersDto;
         }
     }
 }
