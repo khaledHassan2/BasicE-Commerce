@@ -47,23 +47,27 @@ namespace BasicE_Commerce.Presentation
 
         private void UserMainForm_Load(object sender, EventArgs e)
         {
-            LoadCategories(); // اول ما يحمل يعرض الكاتيجوري
+            checkoutbtn.Visible = false;
+            LoadCategories();
         }
 
         private void btnCategories_Click(object sender, EventArgs e)
         {
+            checkoutbtn.Visible = false;
             headerLabel.Text = "Categories";
             LoadCategories();
         }
 
         private void btnProducts_Click(object sender, EventArgs e)
         {
+            checkoutbtn.Visible = false;
             headerLabel.Text = "Products";
             LoadProducts();
         }
 
         private void LoadCategories()
         {
+            checkoutbtn.Visible = false;
             mainPanel.Controls.Clear();
             var categories = _categoryService.GetAll().ToList();
 
@@ -85,7 +89,6 @@ namespace BasicE_Commerce.Presentation
                 lbl.Dock = DockStyle.Fill;
                 lbl.TextAlign = ContentAlignment.MiddleCenter;
 
-                // فتح صفحة المنتجات الخاصة بالكاتيجوري
                 card.Cursor = Cursors.Hand;
                 card.Click += (s, e) =>
                 {
@@ -109,6 +112,7 @@ namespace BasicE_Commerce.Presentation
 
         private void LoadProductsByCategory(int categoryId)
         {
+            checkoutbtn.Visible = false;
             mainPanel.Controls.Clear();
 
             // Panel رئيسي يحتوي على زر الرجوع + الكروت
@@ -158,6 +162,7 @@ namespace BasicE_Commerce.Presentation
 
         private void LoadProducts()
         {
+            checkoutbtn.Visible = false;
             mainPanel.Controls.Clear();
             var products = _productService.GetAll().ToList();
 
@@ -263,6 +268,7 @@ namespace BasicE_Commerce.Presentation
 
         private void btnCart_Click(object sender, EventArgs e)
         {
+            checkoutbtn.Visible = true;
             headerLabel.Text = "My Cart";
             mainPanel.Controls.Clear();
 
@@ -368,6 +374,7 @@ namespace BasicE_Commerce.Presentation
 
         private Panel CreateCard(string title, string imagePath, Action onClick)
         {
+
             Panel card = new Panel();
             card.Size = new Size(200, 250);
             card.Margin = new Padding(10);
@@ -402,7 +409,7 @@ namespace BasicE_Commerce.Presentation
             return card;
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void checkoutbtn_Click(object sender, EventArgs e)
         {
             OrderCreatedDTO orderDTO = new OrderCreatedDTO()
             {
@@ -424,8 +431,11 @@ namespace BasicE_Commerce.Presentation
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnOrder_Click(object sender, EventArgs e)
         {
+            checkoutbtn.Visible = false;
+            headerLabel.Text = "My Order";
+            mainPanel.Controls.Clear();
 
         }
     }

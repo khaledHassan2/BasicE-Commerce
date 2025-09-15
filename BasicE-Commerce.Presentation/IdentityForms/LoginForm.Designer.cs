@@ -49,7 +49,7 @@
             // 
             // LoginEmailInput
             // 
-            LoginEmailInput.Location = new Point(381, 82);
+            LoginEmailInput.Location = new Point(421, 96);
             LoginEmailInput.Margin = new Padding(4, 2, 4, 2);
             LoginEmailInput.Name = "LoginEmailInput";
             LoginEmailInput.Size = new Size(259, 26);
@@ -57,7 +57,7 @@
             // 
             // LoginPasswordInput
             // 
-            LoginPasswordInput.Location = new Point(381, 152);
+            LoginPasswordInput.Location = new Point(421, 166);
             LoginPasswordInput.Margin = new Padding(4, 2, 4, 2);
             LoginPasswordInput.Name = "LoginPasswordInput";
             LoginPasswordInput.Size = new Size(259, 26);
@@ -67,7 +67,7 @@
             // LoginEmailLbl
             // 
             LoginEmailLbl.AutoSize = true;
-            LoginEmailLbl.Location = new Point(381, 62);
+            LoginEmailLbl.Location = new Point(421, 76);
             LoginEmailLbl.Margin = new Padding(4, 0, 4, 0);
             LoginEmailLbl.Name = "LoginEmailLbl";
             LoginEmailLbl.Size = new Size(58, 18);
@@ -77,7 +77,7 @@
             // LoginPasswordLbl
             // 
             LoginPasswordLbl.AutoSize = true;
-            LoginPasswordLbl.Location = new Point(381, 131);
+            LoginPasswordLbl.Location = new Point(421, 145);
             LoginPasswordLbl.Margin = new Padding(4, 0, 4, 0);
             LoginPasswordLbl.Name = "LoginPasswordLbl";
             LoginPasswordLbl.Size = new Size(88, 18);
@@ -88,10 +88,10 @@
             // 
             LoginBtn.BackColor = Color.Teal;
             LoginBtn.ForeColor = Color.White;
-            LoginBtn.Location = new Point(381, 195);
+            LoginBtn.Location = new Point(450, 206);
             LoginBtn.Margin = new Padding(4, 2, 4, 2);
             LoginBtn.Name = "LoginBtn";
-            LoginBtn.Size = new Size(116, 33);
+            LoginBtn.Size = new Size(198, 46);
             LoginBtn.TabIndex = 4;
             LoginBtn.Text = "Login";
             LoginBtn.UseVisualStyleBackColor = false;
@@ -100,9 +100,9 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(14, 18);
+            pictureBox1.Location = new Point(0, 0);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(336, 261);
+            pictureBox1.Size = new Size(391, 327);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 5;
             pictureBox1.TabStop = false;
@@ -110,7 +110,7 @@
             // pictureBox3
             // 
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(647, 82);
+            pictureBox3.Location = new Point(687, 96);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(26, 26);
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
@@ -120,7 +120,7 @@
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(647, 152);
+            pictureBox2.Location = new Point(687, 166);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(26, 26);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
@@ -132,7 +132,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Courier New", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.Black;
-            label1.Location = new Point(399, 230);
+            label1.Location = new Point(397, 274);
             label1.Name = "label1";
             label1.Size = new Size(241, 22);
             label1.TabIndex = 9;
@@ -152,9 +152,9 @@
             panel1.Controls.Add(LoginPasswordInput);
             panel1.Controls.Add(LoginBtn);
             panel1.Controls.Add(LoginPasswordLbl);
-            panel1.Location = new Point(49, 41);
+            panel1.Location = new Point(23, 21);
             panel1.Name = "panel1";
-            panel1.Size = new Size(724, 302);
+            panel1.Size = new Size(770, 327);
             panel1.TabIndex = 10;
             // 
             // RegisterLink
@@ -162,7 +162,7 @@
             RegisterLink.AutoSize = true;
             RegisterLink.Font = new Font("Courier New", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             RegisterLink.LinkColor = Color.Red;
-            RegisterLink.Location = new Point(455, 256);
+            RegisterLink.Location = new Point(644, 274);
             RegisterLink.Name = "RegisterLink";
             RegisterLink.Size = new Size(98, 22);
             RegisterLink.TabIndex = 11;
@@ -174,7 +174,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Courier New", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(469, 18);
+            label2.Location = new Point(509, 18);
             label2.Name = "label2";
             label2.Size = new Size(110, 36);
             label2.TabIndex = 10;
@@ -190,6 +190,7 @@
             Font = new Font("Courier New", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Margin = new Padding(4, 2, 4, 2);
             Name = "LoginForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "LoginForm";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();

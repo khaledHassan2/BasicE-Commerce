@@ -128,6 +128,7 @@
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Margin = new Padding(5, 3, 5, 3);
             Name = "AddNewCategoryForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "AddNewCategoryForm";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);

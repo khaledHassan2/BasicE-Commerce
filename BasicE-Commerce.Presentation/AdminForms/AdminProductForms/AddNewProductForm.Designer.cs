@@ -230,6 +230,7 @@
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Margin = new Padding(5, 3, 5, 3);
             Name = "AddNewProductForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "AddNewProductForm";
             ((System.ComponentModel.ISupportInitialize)ProductStockInput).EndInit();
             ((System.ComponentModel.ISupportInitialize)ProductPriceInput).EndInit();

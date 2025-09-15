@@ -32,14 +32,14 @@
             AddNewCategoryBtn = new Button();
             CategoryListGrid = new DataGridView();
             LoadCategoriesBtn = new Button();
-            panel1 = new Panel();
+            sidePanel = new Panel();
             label1 = new Label();
             label2 = new Label();
             AddNewProductBtn = new Button();
             LoadProductsBtn = new Button();
             panel2 = new Panel();
             ((System.ComponentModel.ISupportInitialize)CategoryListGrid).BeginInit();
-            panel1.SuspendLayout();
+            sidePanel.SuspendLayout();
             panel2.SuspendLayout();
             SuspendLayout();
             // 
@@ -76,20 +76,20 @@
             LoadCategoriesBtn.UseVisualStyleBackColor = true;
             LoadCategoriesBtn.Click += LoadCategoriesBtn_Click;
             // 
-            // panel1
+            // sidePanel
             // 
-            panel1.Anchor = AnchorStyles.Left;
-            panel1.BackColor = SystemColors.ActiveCaption;
-            panel1.Controls.Add(label1);
-            panel1.Controls.Add(label2);
-            panel1.Controls.Add(AddNewProductBtn);
-            panel1.Controls.Add(LoadProductsBtn);
-            panel1.Controls.Add(LoadCategoriesBtn);
-            panel1.Controls.Add(AddNewCategoryBtn);
-            panel1.Location = new Point(12, 9);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(203, 373);
-            panel1.TabIndex = 3;
+            sidePanel.BackColor = SystemColors.ActiveCaption;
+            sidePanel.Controls.Add(label1);
+            sidePanel.Controls.Add(label2);
+            sidePanel.Controls.Add(AddNewProductBtn);
+            sidePanel.Controls.Add(LoadProductsBtn);
+            sidePanel.Controls.Add(LoadCategoriesBtn);
+            sidePanel.Controls.Add(AddNewCategoryBtn);
+            sidePanel.Dock = DockStyle.Fill;
+            sidePanel.Location = new Point(0, 0);
+            sidePanel.Name = "sidePanel";
+            sidePanel.Size = new Size(968, 388);
+            sidePanel.TabIndex = 3;
             // 
             // label1
             // 
@@ -139,21 +139,22 @@
             panel2.Size = new Size(735, 373);
             panel2.TabIndex = 4;
             // 
-            // AdminCategoriesForm
+            // AdminForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(968, 388);
             Controls.Add(panel2);
-            Controls.Add(panel1);
+            Controls.Add(sidePanel);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(3, 2, 3, 2);
-            Name = "AdminCategoriesForm";
+            Name = "AdminForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Admin Form";
             ((System.ComponentModel.ISupportInitialize)CategoryListGrid).EndInit();
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
+            sidePanel.ResumeLayout(false);
+            sidePanel.PerformLayout();
             panel2.ResumeLayout(false);
             ResumeLayout(false);
         }
@@ -163,7 +164,7 @@
         private Button AddNewCategoryBtn;
         private DataGridView CategoryListGrid;
         private Button LoadCategoriesBtn;
-        private Panel panel1;
+        private Panel sidePanel;
         private Panel panel2;
         private Button LoadProductsBtn;
         private Label label1;

@@ -126,7 +126,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(384, 3);
+            pictureBox1.Location = new Point(384, 0);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(377, 332);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -145,7 +145,7 @@
             panel1.Controls.Add(EmailLbl);
             panel1.Controls.Add(RegisterPasswordInput);
             panel1.Controls.Add(NameLbl);
-            panel1.Location = new Point(41, 33);
+            panel1.Location = new Point(27, 23);
             panel1.Name = "panel1";
             panel1.Size = new Size(761, 335);
             panel1.TabIndex = 9;
@@ -155,7 +155,7 @@
             AutoScaleDimensions = new SizeF(10F, 18F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Teal;
-            ClientSize = new Size(840, 409);
+            ClientSize = new Size(818, 382);
             Controls.Add(panel1);
             Font = new Font("Courier New", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.FixedSingle;

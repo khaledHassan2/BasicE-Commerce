@@ -24,20 +24,20 @@
         private void InitializeComponent()
         {
             sidePanel = new Panel();
-            button1 = new Button();
+            btnOrder = new Button();
             btnCart = new Button();
             btnProducts = new Button();
             btnCategories = new Button();
             mainPanel = new Panel();
             headerLabel = new Label();
-            button2 = new Button();
+            checkoutbtn = new Button();
             sidePanel.SuspendLayout();
             SuspendLayout();
             // 
             // sidePanel
             // 
             sidePanel.BackColor = Color.LightSteelBlue;
-            sidePanel.Controls.Add(button1);
+            sidePanel.Controls.Add(btnOrder);
             sidePanel.Controls.Add(btnCart);
             sidePanel.Controls.Add(btnProducts);
             sidePanel.Controls.Add(btnCategories);
@@ -47,16 +47,16 @@
             sidePanel.Size = new Size(200, 391);
             sidePanel.TabIndex = 1;
             // 
-            // button1
+            // btnOrder
             // 
-            button1.Dock = DockStyle.Top;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Location = new Point(0, 150);
-            button1.Name = "button1";
-            button1.Size = new Size(200, 50);
-            button1.TabIndex = 3;
-            button1.Text = "My Order";
-            button1.Click += button1_Click;
+            btnOrder.Dock = DockStyle.Top;
+            btnOrder.FlatStyle = FlatStyle.Flat;
+            btnOrder.Location = new Point(0, 150);
+            btnOrder.Name = "btnOrder";
+            btnOrder.Size = new Size(200, 50);
+            btnOrder.TabIndex = 3;
+            btnOrder.Text = "My Order";
+            btnOrder.Click += btnOrder_Click;
             // 
             // btnCart
             // 
@@ -112,25 +112,26 @@
             headerLabel.Text = "Categories";
             headerLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // button2
+            // checkoutbtn
             // 
-            button2.Anchor = AnchorStyles.Bottom;
-            button2.Location = new Point(395, 398);
-            button2.Name = "button2";
-            button2.Size = new Size(362, 23);
-            button2.TabIndex = 3;
-            button2.Text = "Check out";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            checkoutbtn.Anchor = AnchorStyles.Bottom;
+            checkoutbtn.Location = new Point(395, 398);
+            checkoutbtn.Name = "checkoutbtn";
+            checkoutbtn.Size = new Size(362, 23);
+            checkoutbtn.TabIndex = 3;
+            checkoutbtn.Text = "Check out";
+            checkoutbtn.UseVisualStyleBackColor = true;
+            checkoutbtn.Click += checkoutbtn_Click;
             // 
             // UserMainForm
             // 
             ClientSize = new Size(1000, 431);
-            Controls.Add(button2);
+            Controls.Add(checkoutbtn);
             Controls.Add(mainPanel);
             Controls.Add(sidePanel);
             Controls.Add(headerLabel);
             Name = "UserMainForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "User Main Form";
             Load += UserMainForm_Load;
             sidePanel.ResumeLayout(false);
@@ -138,7 +139,7 @@
         }
         #endregion
 
-        private Button button1;
-        private Button button2;
+        private Button btnOrder;
+        private Button checkoutbtn;
     }
 }
