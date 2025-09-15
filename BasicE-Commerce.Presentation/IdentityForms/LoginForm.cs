@@ -36,14 +36,20 @@ namespace BasicE_Commerce.Presentation
                 {
                     AdminMainForm adminMainForm = new AdminMainForm();
                     adminMainForm.Show();
-                    this.Close();
+                    LoginPasswordInput.Text=string.Empty;
+                    //this.Close();
                 }
                 else if (UserCookies.CurrentRole == "user")
                 {
                     UserMainForm userMainForm = new UserMainForm();
                     userMainForm.Show();
-                    this.Close();
+                    LoginPasswordInput.Text = string.Empty;
+                    // this.Close();
                 }
+            }
+            else
+            {
+                MessageBox.Show("email or password is incorrect");
             }
 
         }

@@ -30,11 +30,12 @@
         {
             CategoriesBtn = new Button();
             ProductsBtn = new Button();
+            panel1 = new Panel();
             SuspendLayout();
             // 
             // CategoriesBtn
             // 
-            CategoriesBtn.Location = new Point(160, 89);
+            CategoriesBtn.Location = new Point(283, 89);
             CategoriesBtn.Name = "CategoriesBtn";
             CategoriesBtn.Size = new Size(134, 42);
             CategoriesBtn.TabIndex = 0;
@@ -44,7 +45,7 @@
             // 
             // ProductsBtn
             // 
-            ProductsBtn.Location = new Point(344, 89);
+            ProductsBtn.Location = new Point(453, 89);
             ProductsBtn.Name = "ProductsBtn";
             ProductsBtn.Size = new Size(134, 42);
             ProductsBtn.TabIndex = 1;
@@ -52,11 +53,20 @@
             ProductsBtn.UseVisualStyleBackColor = true;
             ProductsBtn.Click += ProductsBtn_Click;
             // 
+            // panel1
+            // 
+            panel1.Dock = DockStyle.Left;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(250, 450);
+            panel1.TabIndex = 2;
+            // 
             // AdminMainForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(657, 450);
+            Controls.Add(panel1);
             Controls.Add(ProductsBtn);
             Controls.Add(CategoriesBtn);
             Name = "AdminMainForm";
@@ -68,5 +78,6 @@
 
         private Button CategoriesBtn;
         private Button ProductsBtn;
+        private Panel panel1;
     }
 }
