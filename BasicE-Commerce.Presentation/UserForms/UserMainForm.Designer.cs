@@ -24,12 +24,13 @@
         private void InitializeComponent()
         {
             sidePanel = new Panel();
+            button1 = new Button();
+            btnCart = new Button();
             btnProducts = new Button();
             btnCategories = new Button();
-            btnCart = new Button();
             mainPanel = new Panel();
             headerLabel = new Label();
-            button1 = new Button();
+            button2 = new Button();
             sidePanel.SuspendLayout();
             SuspendLayout();
             // 
@@ -45,6 +46,27 @@
             sidePanel.Name = "sidePanel";
             sidePanel.Size = new Size(200, 540);
             sidePanel.TabIndex = 1;
+            // 
+            // button1
+            // 
+            button1.Dock = DockStyle.Top;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Location = new Point(0, 150);
+            button1.Name = "button1";
+            button1.Size = new Size(200, 50);
+            button1.TabIndex = 3;
+            button1.Text = "My Order";
+            // 
+            // btnCart
+            // 
+            btnCart.Dock = DockStyle.Top;
+            btnCart.FlatStyle = FlatStyle.Flat;
+            btnCart.Location = new Point(0, 100);
+            btnCart.Name = "btnCart";
+            btnCart.Size = new Size(200, 50);
+            btnCart.TabIndex = 2;
+            btnCart.Text = "My Cart";
+            btnCart.Click += btnCart_Click;
             // 
             // btnProducts
             // 
@@ -68,17 +90,6 @@
             btnCategories.Text = "Categories";
             btnCategories.Click += btnCategories_Click;
             // 
-            // btnCart
-            // 
-            btnCart.Dock = DockStyle.Top;
-            btnCart.FlatStyle = FlatStyle.Flat;
-            btnCart.Location = new Point(0, 100);
-            btnCart.Name = "btnCart";
-            btnCart.Size = new Size(200, 50);
-            btnCart.TabIndex = 2;
-            btnCart.Text = "My Cart";
-            btnCart.Click += btnCart_Click;
-            // 
             // mainPanel
             // 
             mainPanel.AutoScroll = true;
@@ -100,19 +111,19 @@
             headerLabel.Text = "Categories";
             headerLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // button1
+            // button2
             // 
-            button1.Dock = DockStyle.Top;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Location = new Point(0, 150);
-            button1.Name = "button1";
-            button1.Size = new Size(200, 50);
-            button1.TabIndex = 3;
-            button1.Text = "My Order";
+            button2.Location = new Point(357, 566);
+            button2.Name = "button2";
+            button2.Size = new Size(362, 23);
+            button2.TabIndex = 3;
+            button2.Text = "Check out";
+            button2.UseVisualStyleBackColor = true;
             // 
             // UserMainForm
             // 
             ClientSize = new Size(1000, 600);
+            Controls.Add(button2);
             Controls.Add(mainPanel);
             Controls.Add(sidePanel);
             Controls.Add(headerLabel);
@@ -125,5 +136,6 @@
         #endregion
 
         private Button button1;
+        private Button button2;
     }
 }

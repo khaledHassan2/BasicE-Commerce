@@ -9,6 +9,7 @@ using BasicE_Commerce.InfraStructure.Repositories;
 using Helpers;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Drawing;
 using System.IO;
 using System.Linq;
@@ -97,42 +98,7 @@ namespace BasicE_Commerce.Presentation
             mainPanel.Controls.Add(flow);
         }
 
-        //private void LoadProductsByCategory(int categoryId)
-        //{
-        //    mainPanel.Controls.Clear();
-
-        //    // زر الرجوع
-        //    Button btnBack = new Button();
-        //    btnBack.Text = "← Back to Categories";
-        //    btnBack.Height = 40;
-        //    btnBack.Dock = DockStyle.Top;
-        //    btnBack.BackColor = Color.LightGray;
-        //    btnBack.Click += (s, e) =>
-        //    {
-        //        headerLabel.Text = "Categories";
-        //        LoadCategories();
-        //    };
-        //    mainPanel.Controls.Add(btnBack);
-
-        //    var products = _productService.GetAll()
-        //        .Where(p => p.CategoryId == categoryId)
-        //        .ToList();
-
-        //    FlowLayoutPanel flow = new FlowLayoutPanel();
-        //    flow.Dock = DockStyle.Fill;
-        //    flow.AutoScroll = true;
-
-        //    foreach (var product in products)
-        //    {
-        //        var saveDirectory = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
-        //            "wwwroot", "Files", "Images", "ProductImages", product.Image);
-
-        //        var card = CreateProductCard(product.Id, saveDirectory, product.Name, product.Description, product.Price);
-        //        flow.Controls.Add(card);
-        //    }
-
-        //    mainPanel.Controls.Add(flow);
-        //}
+      
         private void LoadProductsByCategory(int categoryId)
         {
             mainPanel.Controls.Clear();
@@ -206,6 +172,20 @@ namespace BasicE_Commerce.Presentation
 
         private Panel CreateProductCard(int id, string imagePath, string name, string description, decimal price)
         {
+            Panel _container = new Panel();
+            _container.Dock = DockStyle.Fill;
+            _container.AutoScroll = true;
+            // زر الرجوع
+            Button btnBack = new Button();
+            btnBack.Text = "← Back to Categories";
+            btnBack.Height = 40;
+            btnBack.Dock = DockStyle.Top;
+            btnBack.BackColor = Color.LightGray;
+            btnBack.Click += (s, e) =>
+            {
+                //headerLabel.Text = "Categories";
+                //LoadCategories();
+            };
             Panel card = new Panel();
             card.Size = new Size(200, 300);
             card.BorderStyle = BorderStyle.FixedSingle;
@@ -267,6 +247,8 @@ namespace BasicE_Commerce.Presentation
             card.Controls.Add(lblDesc);
             card.Controls.Add(lblName);
             card.Controls.Add(picture);
+           _container.Controls.Add(btnBack);
+           // mainPanel.Controls.Add(btnBack);
 
             return card;
         }
