@@ -28,27 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddNewCategoryForm));
             CategoryNameinput = new TextBox();
             AddNewCategoryLbl = new Label();
             CategoryNameLbl = new Label();
             CategoryDescriptionInput = new TextBox();
             CategoryDescriptionLbl = new Label();
             SaveNewCategoryBtn = new Button();
+            pictureBox1 = new PictureBox();
+            pictureBox2 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // CategoryNameinput
             // 
-            CategoryNameinput.Location = new Point(423, 117);
-            CategoryNameinput.Margin = new Padding(3, 2, 3, 2);
+            CategoryNameinput.Location = new Point(665, 172);
+            CategoryNameinput.Margin = new Padding(5, 3, 5, 3);
             CategoryNameinput.Name = "CategoryNameinput";
-            CategoryNameinput.Size = new Size(230, 23);
+            CategoryNameinput.Size = new Size(359, 29);
             CategoryNameinput.TabIndex = 0;
             // 
             // AddNewCategoryLbl
             // 
             AddNewCategoryLbl.AutoSize = true;
             AddNewCategoryLbl.Font = new Font("Simplified Arabic Fixed", 28.2F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            AddNewCategoryLbl.Location = new Point(274, 39);
+            AddNewCategoryLbl.Location = new Point(349, 18);
+            AddNewCategoryLbl.Margin = new Padding(5, 0, 5, 0);
             AddNewCategoryLbl.Name = "AddNewCategoryLbl";
             AddNewCategoryLbl.Size = new Size(404, 47);
             AddNewCategoryLbl.TabIndex = 1;
@@ -57,55 +63,87 @@
             // CategoryNameLbl
             // 
             CategoryNameLbl.AutoSize = true;
-            CategoryNameLbl.Location = new Point(285, 125);
+            CategoryNameLbl.Location = new Point(665, 122);
+            CategoryNameLbl.Margin = new Padding(5, 0, 5, 0);
             CategoryNameLbl.Name = "CategoryNameLbl";
-            CategoryNameLbl.Size = new Size(90, 15);
+            CategoryNameLbl.Size = new Size(153, 22);
             CategoryNameLbl.TabIndex = 2;
             CategoryNameLbl.Text = "Category Name";
             // 
             // CategoryDescriptionInput
             // 
-            CategoryDescriptionInput.Location = new Point(423, 177);
-            CategoryDescriptionInput.Margin = new Padding(3, 2, 3, 2);
+            CategoryDescriptionInput.Location = new Point(665, 260);
+            CategoryDescriptionInput.Margin = new Padding(5, 3, 5, 3);
             CategoryDescriptionInput.Multiline = true;
             CategoryDescriptionInput.Name = "CategoryDescriptionInput";
-            CategoryDescriptionInput.Size = new Size(230, 70);
+            CategoryDescriptionInput.Size = new Size(359, 101);
             CategoryDescriptionInput.TabIndex = 3;
             // 
             // CategoryDescriptionLbl
             // 
             CategoryDescriptionLbl.AutoSize = true;
-            CategoryDescriptionLbl.Location = new Point(285, 201);
+            CategoryDescriptionLbl.Location = new Point(665, 215);
+            CategoryDescriptionLbl.Margin = new Padding(5, 0, 5, 0);
             CategoryDescriptionLbl.Name = "CategoryDescriptionLbl";
-            CategoryDescriptionLbl.Size = new Size(118, 15);
+            CategoryDescriptionLbl.Size = new Size(230, 22);
             CategoryDescriptionLbl.TabIndex = 4;
             CategoryDescriptionLbl.Text = "Category Description";
             // 
             // SaveNewCategoryBtn
             // 
-            SaveNewCategoryBtn.Location = new Point(488, 276);
-            SaveNewCategoryBtn.Margin = new Padding(3, 2, 3, 2);
+            SaveNewCategoryBtn.ForeColor = Color.DarkOliveGreen;
+            SaveNewCategoryBtn.Location = new Point(818, 405);
+            SaveNewCategoryBtn.Margin = new Padding(5, 3, 5, 3);
             SaveNewCategoryBtn.Name = "SaveNewCategoryBtn";
-            SaveNewCategoryBtn.Size = new Size(80, 34);
+            SaveNewCategoryBtn.Size = new Size(126, 50);
             SaveNewCategoryBtn.TabIndex = 5;
             SaveNewCategoryBtn.Text = "Add";
             SaveNewCategoryBtn.UseVisualStyleBackColor = true;
             SaveNewCategoryBtn.Click += SaveNewCategoryBtn_Click;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(51, 98);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(536, 357);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 6;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.BackColor = Color.White;
+            pictureBox2.Image = Properties.Resources.AddImage__1_;
+            pictureBox2.Location = new Point(712, 405);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(52, 50);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 7;
+            pictureBox2.TabStop = false;
+            // 
             // AddNewCategoryForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(11F, 22F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(700, 338);
+            BackColor = Color.Teal;
+            ClientSize = new Size(1100, 496);
+            Controls.Add(pictureBox2);
+            Controls.Add(pictureBox1);
             Controls.Add(SaveNewCategoryBtn);
             Controls.Add(CategoryDescriptionLbl);
             Controls.Add(CategoryDescriptionInput);
             Controls.Add(CategoryNameLbl);
             Controls.Add(AddNewCategoryLbl);
             Controls.Add(CategoryNameinput);
-            Margin = new Padding(3, 2, 3, 2);
+            Font = new Font("Courier New", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            ForeColor = SystemColors.ButtonFace;
+            Margin = new Padding(5, 3, 5, 3);
             Name = "AddNewCategoryForm";
             Text = "AddNewCategoryForm";
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -118,5 +156,7 @@
         private TextBox CategoryDescriptionInput;
         private Label CategoryDescriptionLbl;
         private Button SaveNewCategoryBtn;
+        private PictureBox pictureBox1;
+        private PictureBox pictureBox2;
     }
 }

@@ -39,5 +39,10 @@ namespace BasicE_Commerce.Presentation.AdminForms.AdminCategoryForms
             _CategoryService.Create(newCategory);
             this.Close();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

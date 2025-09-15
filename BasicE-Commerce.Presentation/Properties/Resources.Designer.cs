@@ -73,6 +73,16 @@ namespace BasicE_Commerce.Presentation.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap AddImage__1_ {
+            get {
+                object obj = ResourceManager.GetObject("AddImage (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_key_64 {
             get {
                 object obj = ResourceManager.GetObject("icons8-key-64", resourceCulture);
@@ -106,6 +116,16 @@ namespace BasicE_Commerce.Presentation.Properties {
         internal static System.Drawing.Bitmap vecteezy_3d_illustration_of_a_teenage_female_programmer_at_the_35899074 {
             get {
                 object obj = ResourceManager.GetObject("vecteezy_3d-illustration-of-a-teenage-female-programmer-at-the_35899074", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap vecteezy_3d_illustration_of_a_teenage_female_programmer_at_the_358990741 {
+            get {
+                object obj = ResourceManager.GetObject("vecteezy_3d-illustration-of-a-teenage-female-programmer-at-the_358990741", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
