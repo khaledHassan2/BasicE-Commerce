@@ -38,52 +38,55 @@
             // 
             // CategoryNameinput
             // 
-            CategoryNameinput.Location = new Point(257, 131);
+            CategoryNameinput.Location = new Point(423, 117);
+            CategoryNameinput.Margin = new Padding(3, 2, 3, 2);
             CategoryNameinput.Name = "CategoryNameinput";
-            CategoryNameinput.Size = new Size(326, 27);
+            CategoryNameinput.Size = new Size(230, 23);
             CategoryNameinput.TabIndex = 0;
             // 
             // AddNewCategoryLbl
             // 
             AddNewCategoryLbl.AutoSize = true;
             AddNewCategoryLbl.Font = new Font("Simplified Arabic Fixed", 28.2F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
-            AddNewCategoryLbl.Location = new Point(151, 27);
+            AddNewCategoryLbl.Location = new Point(274, 39);
             AddNewCategoryLbl.Name = "AddNewCategoryLbl";
-            AddNewCategoryLbl.Size = new Size(488, 56);
+            AddNewCategoryLbl.Size = new Size(404, 47);
             AddNewCategoryLbl.TabIndex = 1;
             AddNewCategoryLbl.Text = "Add New Category";
             // 
             // CategoryNameLbl
             // 
             CategoryNameLbl.AutoSize = true;
-            CategoryNameLbl.Location = new Point(112, 138);
+            CategoryNameLbl.Location = new Point(285, 125);
             CategoryNameLbl.Name = "CategoryNameLbl";
-            CategoryNameLbl.Size = new Size(113, 20);
+            CategoryNameLbl.Size = new Size(90, 15);
             CategoryNameLbl.TabIndex = 2;
             CategoryNameLbl.Text = "Category Name";
             // 
             // CategoryDescriptionInput
             // 
-            CategoryDescriptionInput.Location = new Point(257, 210);
+            CategoryDescriptionInput.Location = new Point(423, 177);
+            CategoryDescriptionInput.Margin = new Padding(3, 2, 3, 2);
             CategoryDescriptionInput.Multiline = true;
             CategoryDescriptionInput.Name = "CategoryDescriptionInput";
-            CategoryDescriptionInput.Size = new Size(326, 92);
+            CategoryDescriptionInput.Size = new Size(230, 70);
             CategoryDescriptionInput.TabIndex = 3;
             // 
             // CategoryDescriptionLbl
             // 
             CategoryDescriptionLbl.AutoSize = true;
-            CategoryDescriptionLbl.Location = new Point(92, 241);
+            CategoryDescriptionLbl.Location = new Point(285, 201);
             CategoryDescriptionLbl.Name = "CategoryDescriptionLbl";
-            CategoryDescriptionLbl.Size = new Size(149, 20);
+            CategoryDescriptionLbl.Size = new Size(118, 15);
             CategoryDescriptionLbl.TabIndex = 4;
             CategoryDescriptionLbl.Text = "Category Description";
             // 
             // SaveNewCategoryBtn
             // 
-            SaveNewCategoryBtn.Location = new Point(331, 343);
+            SaveNewCategoryBtn.Location = new Point(488, 276);
+            SaveNewCategoryBtn.Margin = new Padding(3, 2, 3, 2);
             SaveNewCategoryBtn.Name = "SaveNewCategoryBtn";
-            SaveNewCategoryBtn.Size = new Size(155, 46);
+            SaveNewCategoryBtn.Size = new Size(80, 34);
             SaveNewCategoryBtn.TabIndex = 5;
             SaveNewCategoryBtn.Text = "Add";
             SaveNewCategoryBtn.UseVisualStyleBackColor = true;
@@ -91,15 +94,16 @@
             // 
             // AddNewCategoryForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(700, 338);
             Controls.Add(SaveNewCategoryBtn);
             Controls.Add(CategoryDescriptionLbl);
             Controls.Add(CategoryDescriptionInput);
             Controls.Add(CategoryNameLbl);
             Controls.Add(AddNewCategoryLbl);
             Controls.Add(CategoryNameinput);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "AddNewCategoryForm";
             Text = "AddNewCategoryForm";
             ResumeLayout(false);
