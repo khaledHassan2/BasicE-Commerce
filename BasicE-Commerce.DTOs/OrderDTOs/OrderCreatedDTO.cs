@@ -10,7 +10,7 @@ namespace BasicE_Commerce.DTOs.OrderDTOs
     {
         public DateTime OrderDate { get; set; } = DateTime.Now;
         public string Status { get; set; } = "Pending";
-        public int CartId { get; set; }
+       
  
         public int UserId { get; set; }
 
