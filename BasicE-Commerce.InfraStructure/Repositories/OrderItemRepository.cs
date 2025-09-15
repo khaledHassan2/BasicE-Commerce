@@ -4,7 +4,7 @@ using BasicE_Commerce.Models;
 
 namespace BasicE_Commerce.InfraStructure.Repositories
 {
-    public class OrderItemRepository : GenericRepository<Order, int>, IOrderRepository
+    public class OrderItemRepository : GenericRepository<OrderItem, int>, IOrderItemRepository
     {
         public OrderItemRepository(BasicEcommerceDbContext context) : base(context)
         {

@@ -17,11 +17,12 @@ namespace BasicE_Commerce.Application.Services.UserServices
             _unitOfWork = unitOfWork;
         }
 
-        public void CreateOrder(OrderCreatedDTO orderCreatedDTO)
+        public int CreateOrder(OrderCreatedDTO orderCreatedDTO)
         {
             var order = orderCreatedDTO.Adapt<Order>();
             _orderRepository.Create(order);
             _unitOfWork.Commit();
+            return order.Id;
         }
     }
 }

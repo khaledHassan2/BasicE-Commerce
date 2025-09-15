@@ -6,6 +6,6 @@ namespace BasicE_Commerce.Application.IServices.IUserServices
 {
     public interface IUserOrderService : IUserService<Order, int, UserOrderDTO, OrderCreatedDTO, IOrderRepository>
     {
-        public void CreateOrder(OrderCreatedDTO orderCreatedDTO);
+        public int CreateOrder(OrderCreatedDTO orderCreatedDTO);
     }
 }

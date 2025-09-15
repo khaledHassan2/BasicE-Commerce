@@ -12,7 +12,7 @@ namespace BasicE_Commerce.DTOs.OrderDTOs
         public string Status { get; set; } = "Pending";
        
  
-        public int UserId { get; set; }
+        public int? UserId { get; set; }
 
     }
 }
