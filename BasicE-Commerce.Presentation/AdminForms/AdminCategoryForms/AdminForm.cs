@@ -5,38 +5,46 @@ using BasicE_Commerce.DTOs.CategoryDTOs;
 using BasicE_Commerce.DTOs.PtoductDTOs;
 using BasicE_Commerce.InfraStructure;
 using BasicE_Commerce.InfraStructure.Repositories;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+using BasicE_Commerce.Models;
+using BasicE_Commerce.Presentation.AdminForms.AdminCategoryForms;
+using BasicE_Commerce.Presentation.AdminForms.AdminProductForms;
 
-namespace BasicE_Commerce.Presentation.AdminForms.AdminProductForms
+namespace BasicE_Commerce.Presentation.AdminForms
 {
-    public partial class AdminProductsForm : Form
+    public partial class AdminForm : Form
     {
+        private IAdminCategoryService _CategoryService;
+        private List<AdminCategoryDTO>? _CategoryList;
         private IAdminProductService _ProductService;
         private List<AdminProductDTO>? _ProductList;
-        public AdminProductsForm()
+        public AdminForm()
         {
             InitializeComponent();
-
             var dbContext = new BasicEcommerceDbContext();
             var unitOfWork = new UnitOfWork(dbContext);
+            var categoryRepsoity = new CategoryRepository(dbContext);
+            _CategoryService = new AdminCategoryService(unitOfWork, categoryRepsoity);
+
             var productRepsoity = new ProductRepository(dbContext);
             _ProductService = new AdminProductService(unitOfWork, productRepsoity);
+        }
 
+        private void LoadCategoriesBtn_Click(object sender, EventArgs e)
+        {
+            _CategoryList = _CategoryService.GetAll().ToList();
+            CategoryListGrid.DataSource = _CategoryList;
+        }
 
+        private void AddNewCategoryBtn_Click(object sender, EventArgs e)
+        {
+            AddNewCategoryForm addNewCategoryForm = new AddNewCategoryForm();
+            addNewCategoryForm.ShowDialog();
         }
 
         private void LoadProductsBtn_Click(object sender, EventArgs e)
         {
             _ProductList = _ProductService.GetAll().ToList();
-            ProductListGrid.DataSource = _ProductList;
+            CategoryListGrid.DataSource = _ProductList;
         }
 
         private void AddNewProductBtn_Click(object sender, EventArgs e)

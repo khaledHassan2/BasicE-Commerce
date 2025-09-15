@@ -5,6 +5,7 @@ using BasicE_Commerce.DTOs.mapping;
 using BasicE_Commerce.DTOs.UserDTOs;
 using BasicE_Commerce.InfraStructure;
 using BasicE_Commerce.InfraStructure.Repositories;
+using BasicE_Commerce.Presentation.AdminForms;
 using Helpers;
 
 namespace BasicE_Commerce.Presentation
@@ -34,7 +35,7 @@ namespace BasicE_Commerce.Presentation
             {
                 if (UserCookies.CurrentRole == "admin")
                 {
-                    AdminMainForm adminMainForm = new AdminMainForm();
+                    AdminForm adminMainForm = new AdminForm();
                     adminMainForm.Show();
                     LoginPasswordInput.Text=string.Empty;
                     //this.Close();
