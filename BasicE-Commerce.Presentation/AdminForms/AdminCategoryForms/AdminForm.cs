@@ -7,6 +7,7 @@ using BasicE_Commerce.InfraStructure;
 using BasicE_Commerce.InfraStructure.Repositories;
 using BasicE_Commerce.Models;
 using BasicE_Commerce.Presentation.AdminForms.AdminCategoryForms;
+using BasicE_Commerce.Presentation.AdminForms.AdminOrderForms;
 using BasicE_Commerce.Presentation.AdminForms.AdminProductForms;
 
 namespace BasicE_Commerce.Presentation.AdminForms
@@ -51,6 +52,22 @@ namespace BasicE_Commerce.Presentation.AdminForms
         {
             AddNewProductForm addNewProductForm = new AddNewProductForm();
             addNewProductForm.ShowDialog();
+        }
+
+        private void CategoryListGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void mangmentOrderbtn_Click(object sender, EventArgs e)
+        {
+            AdminOrderForm adminOrderForm = new AdminOrderForm();
+            adminOrderForm.Show();
+        }
+
+        private void sidePanel_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

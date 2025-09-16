@@ -11,5 +11,6 @@ namespace BasicE_Commerce.Application.IServices.IAdminServices
 {
 	public interface IAdminOrderService : IAdminService<Order, int, AdminOrderDTO, OrderCreatedDTO, IOrderRepository>
 	{
-	}
+		public void UpdateOrderStatus(int orderId, string status);
+    }
 }

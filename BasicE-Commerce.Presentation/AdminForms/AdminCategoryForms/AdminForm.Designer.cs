@@ -33,12 +33,12 @@
             CategoryListGrid = new DataGridView();
             LoadCategoriesBtn = new Button();
             sidePanel = new Panel();
+            mangmentOrderbtn = new Button();
             label1 = new Label();
             label2 = new Label();
             AddNewProductBtn = new Button();
             LoadProductsBtn = new Button();
             panel2 = new Panel();
-            mangmentOrderbtn = new Button();
             ((System.ComponentModel.ISupportInitialize)CategoryListGrid).BeginInit();
             sidePanel.SuspendLayout();
             panel2.SuspendLayout();
@@ -65,6 +65,7 @@
             CategoryListGrid.RowHeadersWidth = 51;
             CategoryListGrid.Size = new Size(735, 349);
             CategoryListGrid.TabIndex = 1;
+            CategoryListGrid.CellContentClick += CategoryListGrid_CellContentClick;
             // 
             // LoadCategoriesBtn
             // 
@@ -92,6 +93,18 @@
             sidePanel.Name = "sidePanel";
             sidePanel.Size = new Size(968, 388);
             sidePanel.TabIndex = 3;
+            sidePanel.Paint += sidePanel_Paint;
+            // 
+            // mangmentOrderbtn
+            // 
+            mangmentOrderbtn.Location = new Point(4, 294);
+            mangmentOrderbtn.Margin = new Padding(3, 2, 3, 2);
+            mangmentOrderbtn.Name = "mangmentOrderbtn";
+            mangmentOrderbtn.Size = new Size(196, 54);
+            mangmentOrderbtn.TabIndex = 5;
+            mangmentOrderbtn.Text = "Mangment Orders";
+            mangmentOrderbtn.UseVisualStyleBackColor = true;
+            mangmentOrderbtn.Click += mangmentOrderbtn_Click;
             // 
             // label1
             // 
@@ -140,16 +153,6 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(735, 349);
             panel2.TabIndex = 4;
-            // 
-            // mangmentOrderbtn
-            // 
-            mangmentOrderbtn.Location = new Point(4, 294);
-            mangmentOrderbtn.Margin = new Padding(3, 2, 3, 2);
-            mangmentOrderbtn.Name = "mangmentOrderbtn";
-            mangmentOrderbtn.Size = new Size(196, 54);
-            mangmentOrderbtn.TabIndex = 5;
-            mangmentOrderbtn.Text = "Mangment Orders";
-            mangmentOrderbtn.UseVisualStyleBackColor = true;
             // 
             // AdminForm
             // 

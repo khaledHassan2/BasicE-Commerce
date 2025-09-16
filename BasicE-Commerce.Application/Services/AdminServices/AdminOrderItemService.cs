@@ -2,6 +2,7 @@
 using BasicE_Commerce.Application.IServices.IAdminServices;
 using BasicE_Commerce.DTOs.OrderItemDTOs;
 using BasicE_Commerce.Models;
+using Mapster;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,8 +14,16 @@ namespace BasicE_Commerce.Application.Services.AdminServices
     public class AdminOrderItemService : AdminService<OrderItem, int, AdminOrderItemDTO, OrderItemCreatedDTO, IOrderItemRepository>
         , IAdminOrderItemService
     {
+        IOrderItemRepository _orderItemRepository;
         public AdminOrderItemService(IUnitOfWork unitOfWork, IOrderItemRepository repository) : base(unitOfWork, repository)
         {
+            _orderItemRepository = repository;
+        }
+
+        public List<AdminOrderItemDTO> GetOrderItemByOrderId(int orderId)
+        {
+          var orderItems=  _orderItemRepository.Get(filter: e => e.OrderId == orderId);
+          return orderItems.Adapt<List<AdminOrderItemDTO>>();
         }
     }
 }
