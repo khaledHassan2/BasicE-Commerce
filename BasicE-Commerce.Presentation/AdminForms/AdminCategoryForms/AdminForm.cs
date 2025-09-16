@@ -9,6 +9,7 @@ using BasicE_Commerce.Models;
 using BasicE_Commerce.Presentation.AdminForms.AdminCategoryForms;
 using BasicE_Commerce.Presentation.AdminForms.AdminOrderForms;
 using BasicE_Commerce.Presentation.AdminForms.AdminProductForms;
+using Helpers;
 
 namespace BasicE_Commerce.Presentation.AdminForms
 {
@@ -68,6 +69,11 @@ namespace BasicE_Commerce.Presentation.AdminForms
         private void sidePanel_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void AdminForm_Load(object sender, EventArgs e)
+        {
+            this.Text=UserCookies.CurrentUserName + " - Admin Panel";
         }
     }
 }

@@ -167,6 +167,7 @@
             Name = "AdminForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Admin Form";
+            Load += AdminForm_Load;
             ((System.ComponentModel.ISupportInitialize)CategoryListGrid).EndInit();
             sidePanel.ResumeLayout(false);
             sidePanel.PerformLayout();
