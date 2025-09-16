@@ -38,6 +38,7 @@
             AddNewProductBtn = new Button();
             LoadProductsBtn = new Button();
             panel2 = new Panel();
+            mangmentOrderbtn = new Button();
             ((System.ComponentModel.ISupportInitialize)CategoryListGrid).BeginInit();
             sidePanel.SuspendLayout();
             panel2.SuspendLayout();
@@ -62,7 +63,7 @@
             CategoryListGrid.Margin = new Padding(3, 2, 3, 2);
             CategoryListGrid.Name = "CategoryListGrid";
             CategoryListGrid.RowHeadersWidth = 51;
-            CategoryListGrid.Size = new Size(735, 373);
+            CategoryListGrid.Size = new Size(735, 349);
             CategoryListGrid.TabIndex = 1;
             // 
             // LoadCategoriesBtn
@@ -79,6 +80,7 @@
             // sidePanel
             // 
             sidePanel.BackColor = SystemColors.ActiveCaption;
+            sidePanel.Controls.Add(mangmentOrderbtn);
             sidePanel.Controls.Add(label1);
             sidePanel.Controls.Add(label2);
             sidePanel.Controls.Add(AddNewProductBtn);
@@ -94,7 +96,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(74, 179);
+            label1.Location = new Point(74, 160);
             label1.Name = "label1";
             label1.Size = new Size(49, 15);
             label1.TabIndex = 2;
@@ -111,7 +113,7 @@
             // 
             // AddNewProductBtn
             // 
-            AddNewProductBtn.Location = new Point(3, 267);
+            AddNewProductBtn.Location = new Point(4, 236);
             AddNewProductBtn.Margin = new Padding(3, 2, 3, 2);
             AddNewProductBtn.Name = "AddNewProductBtn";
             AddNewProductBtn.Size = new Size(196, 54);
@@ -122,7 +124,7 @@
             // 
             // LoadProductsBtn
             // 
-            LoadProductsBtn.Location = new Point(3, 208);
+            LoadProductsBtn.Location = new Point(4, 177);
             LoadProductsBtn.Margin = new Padding(3, 2, 3, 2);
             LoadProductsBtn.Name = "LoadProductsBtn";
             LoadProductsBtn.Size = new Size(196, 55);
@@ -134,10 +136,20 @@
             // panel2
             // 
             panel2.Controls.Add(CategoryListGrid);
-            panel2.Location = new Point(221, 12);
+            panel2.Location = new Point(221, 36);
             panel2.Name = "panel2";
-            panel2.Size = new Size(735, 373);
+            panel2.Size = new Size(735, 349);
             panel2.TabIndex = 4;
+            // 
+            // mangmentOrderbtn
+            // 
+            mangmentOrderbtn.Location = new Point(4, 294);
+            mangmentOrderbtn.Margin = new Padding(3, 2, 3, 2);
+            mangmentOrderbtn.Name = "mangmentOrderbtn";
+            mangmentOrderbtn.Size = new Size(196, 54);
+            mangmentOrderbtn.TabIndex = 5;
+            mangmentOrderbtn.Text = "Mangment Orders";
+            mangmentOrderbtn.UseVisualStyleBackColor = true;
             // 
             // AdminForm
             // 
@@ -170,5 +182,6 @@
         private Label label1;
         private Label label2;
         private Button AddNewProductBtn;
+        private Button mangmentOrderbtn;
     }
 }
