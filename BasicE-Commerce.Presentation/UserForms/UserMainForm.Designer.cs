@@ -98,7 +98,7 @@
             mainPanel.Dock = DockStyle.Fill;
             mainPanel.Location = new Point(200, 40);
             mainPanel.Name = "mainPanel";
-            mainPanel.Size = new Size(800, 391);
+            mainPanel.Size = new Size(903, 391);
             mainPanel.TabIndex = 0;
             // 
             // headerLabel
@@ -107,7 +107,7 @@
             headerLabel.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
             headerLabel.Location = new Point(0, 0);
             headerLabel.Name = "headerLabel";
-            headerLabel.Size = new Size(1000, 40);
+            headerLabel.Size = new Size(1103, 40);
             headerLabel.TabIndex = 2;
             headerLabel.Text = "Categories";
             headerLabel.TextAlign = ContentAlignment.MiddleCenter;
@@ -116,7 +116,7 @@
             // checkoutbtn
             // 
             checkoutbtn.Anchor = AnchorStyles.Bottom;
-            checkoutbtn.Location = new Point(395, 398);
+            checkoutbtn.Location = new Point(446, 398);
             checkoutbtn.Name = "checkoutbtn";
             checkoutbtn.Size = new Size(362, 23);
             checkoutbtn.TabIndex = 3;
@@ -126,11 +126,12 @@
             // 
             // UserMainForm
             // 
-            ClientSize = new Size(1000, 431);
+            ClientSize = new Size(1103, 431);
             Controls.Add(checkoutbtn);
             Controls.Add(mainPanel);
             Controls.Add(sidePanel);
             Controls.Add(headerLabel);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "UserMainForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "User Main Form";

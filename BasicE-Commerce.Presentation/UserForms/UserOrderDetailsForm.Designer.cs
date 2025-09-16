@@ -1,6 +1,6 @@
 ﻿namespace BasicE_Commerce.Presentation.UserForms
 {
-    partial class UserOrderDetails
+    partial class UserOrderDetailsForm
     {
         /// <summary>
         /// Required designer variable.
@@ -38,16 +38,19 @@
             dataGridView1.Dock = DockStyle.Fill;
             dataGridView1.Location = new Point(0, 0);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(800, 450);
+            dataGridView1.Size = new Size(696, 291);
             dataGridView1.TabIndex = 0;
             // 
-            // UserOrderDetails
+            // UserOrderDetailsForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            BackColor = SystemColors.ActiveCaption;
+            ClientSize = new Size(696, 291);
             Controls.Add(dataGridView1);
-            Name = "UserOrderDetails";
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Name = "UserOrderDetailsForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "UserOrderDetails";
             Load += UserOrderDetails_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();

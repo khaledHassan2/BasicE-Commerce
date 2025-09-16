@@ -15,10 +15,10 @@ using System.Windows.Forms;
 
 namespace BasicE_Commerce.Presentation.UserForms
 {
-    public partial class UserOrderDetails : Form
+    public partial class UserOrderDetailsForm : Form
     {
         public int _orderId;
-        public UserOrderDetails(int orderId)
+        public UserOrderDetailsForm(int orderId)
         {
             InitializeComponent();
             var dbContext = new BasicEcommerceDbContext();

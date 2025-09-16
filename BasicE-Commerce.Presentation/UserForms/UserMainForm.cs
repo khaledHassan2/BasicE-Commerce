@@ -8,8 +8,6 @@ using BasicE_Commerce.DTOs.PtoductDTOs;
 using BasicE_Commerce.InfraStructure;
 using BasicE_Commerce.InfraStructure.Repositories;
 using BasicE_Commerce.Presentation.UserForms;
-
-//using BasicE_Commerce.Presentation.UserForms;
 using Helpers;
 using System;
 using System.Collections.Generic;
@@ -35,7 +33,6 @@ namespace BasicE_Commerce.Presentation
 
             var dbContext = new BasicEcommerceDbContext();
             var unitOfWork = new UnitOfWork(dbContext);
-
             var categoryRepository = new CategoryRepository(dbContext);
             var productRepository = new ProductRepository(dbContext);
             var orderRepository = new OrderRepository(dbContext);
@@ -49,6 +46,7 @@ namespace BasicE_Commerce.Presentation
 
         private void UserMainForm_Load(object sender, EventArgs e)
         {
+            this.Text = $"Welcome {UserCookies.CurrentUserName}";
             checkoutbtn.Visible = false;
             LoadCategories();
         }
@@ -111,18 +109,17 @@ namespace BasicE_Commerce.Presentation
             mainPanel.Controls.Add(flow);
         }
 
-
         private void LoadProductsByCategory(int categoryId)
         {
             checkoutbtn.Visible = false;
             mainPanel.Controls.Clear();
 
-            // Panel رئيسي يحتوي على زر الرجوع + الكروت
+
             Panel container = new Panel();
             container.Dock = DockStyle.Fill;
             container.AutoScroll = true;
 
-            // زر الرجوع
+
             Button btnBack = new Button();
             btnBack.Text = "← Back to Categories";
             btnBack.Height = 40;
@@ -134,7 +131,7 @@ namespace BasicE_Commerce.Presentation
                 LoadCategories();
             };
 
-            // FlowLayoutPanel للكروت
+
             FlowLayoutPanel flow = new FlowLayoutPanel();
             flow.Dock = DockStyle.Fill;
             flow.AutoScroll = true;
@@ -152,15 +149,13 @@ namespace BasicE_Commerce.Presentation
                 flow.Controls.Add(card);
             }
 
-            // ربط المكونات
+
             container.Controls.Add(flow);
             container.Controls.Add(btnBack);
 
-            // عرض في المين بانيل
+
             mainPanel.Controls.Add(container);
         }
-
-
 
         private void LoadProducts()
         {
@@ -190,7 +185,7 @@ namespace BasicE_Commerce.Presentation
             Panel _container = new Panel();
             _container.Dock = DockStyle.Fill;
             _container.AutoScroll = true;
-            // زر الرجوع
+
             Button btnBack = new Button();
             btnBack.Text = "← Back to Categories";
             btnBack.Height = 40;
@@ -207,7 +202,7 @@ namespace BasicE_Commerce.Presentation
             card.BackColor = Color.White;
             card.Margin = new Padding(10);
 
-            // الصورة
+
             PictureBox picture = new PictureBox();
             picture.Size = new Size(200, 150);
             if (File.Exists(imagePath))
@@ -215,7 +210,7 @@ namespace BasicE_Commerce.Presentation
             picture.SizeMode = PictureBoxSizeMode.StretchImage;
             picture.Dock = DockStyle.Top;
 
-            // الاسم
+
             Label lblName = new Label();
             lblName.Text = name;
             lblName.Font = new Font("Arial", 12, FontStyle.Bold);
@@ -223,7 +218,7 @@ namespace BasicE_Commerce.Presentation
             lblName.Dock = DockStyle.Top;
             lblName.Height = 30;
 
-            // الوصف
+
             Label lblDesc = new Label();
             lblDesc.Text = description;
             lblDesc.Font = new Font("Arial", 9, FontStyle.Regular);
@@ -231,7 +226,7 @@ namespace BasicE_Commerce.Presentation
             lblDesc.Dock = DockStyle.Top;
             lblDesc.Height = 50;
 
-            // السعر
+
             Label lblPrice = new Label();
             lblPrice.Text = price.ToString("C");
             lblPrice.Font = new Font("Arial", 11, FontStyle.Bold);
@@ -240,7 +235,7 @@ namespace BasicE_Commerce.Presentation
             lblPrice.Dock = DockStyle.Bottom;
             lblPrice.Height = 30;
 
-            // زر شراء
+
             Button btnBuy = new Button();
             btnBuy.Text = "Buy Now";
             btnBuy.Dock = DockStyle.Bottom;
@@ -256,14 +251,14 @@ namespace BasicE_Commerce.Presentation
                 MessageBox.Show($"Added {name} to Cart");
             };
 
-            // إضافة العناصر للكارد
+
             card.Controls.Add(btnBuy);
             card.Controls.Add(lblPrice);
             card.Controls.Add(lblDesc);
             card.Controls.Add(lblName);
             card.Controls.Add(picture);
             _container.Controls.Add(btnBack);
-            // mainPanel.Controls.Add(btnBack);
+
 
             return card;
         }
@@ -373,44 +368,6 @@ namespace BasicE_Commerce.Presentation
             mainPanel.Controls.Add(flowCart);
         }
 
-
-        private Panel CreateCard(string title, string imagePath, Action onClick)
-        {
-
-            Panel card = new Panel();
-            card.Size = new Size(200, 250);
-            card.Margin = new Padding(10);
-            card.BorderStyle = BorderStyle.FixedSingle;
-            card.BackColor = Color.White;
-
-            PictureBox pic = new PictureBox();
-            pic.Size = new Size(200, 150);
-            if (File.Exists(imagePath))
-                pic.Image = Image.FromFile(imagePath);
-            pic.SizeMode = PictureBoxSizeMode.StretchImage;
-            pic.Dock = DockStyle.Top;
-
-            Label lbl = new Label();
-            lbl.Text = title;
-            lbl.Font = new Font("Segoe UI", 12, FontStyle.Bold);
-            lbl.Dock = DockStyle.Top;
-            lbl.Height = 40;
-            lbl.TextAlign = ContentAlignment.MiddleCenter;
-
-            Button btn = new Button();
-            btn.Text = "View";
-            btn.Dock = DockStyle.Bottom;
-            btn.Height = 40;
-            btn.BackColor = Color.LightBlue;
-            btn.Click += (s, e) => onClick();
-
-            card.Controls.Add(btn);
-            card.Controls.Add(lbl);
-            card.Controls.Add(pic);
-
-            return card;
-        }
-
         private void checkoutbtn_Click(object sender, EventArgs e)
         {
             OrderCreatedDTO orderDTO = new OrderCreatedDTO()
@@ -457,12 +414,12 @@ namespace BasicE_Commerce.Presentation
                 card.BackColor = Color.White;
 
                 // Order ID
-                Label lblOrderId = new Label();
-                lblOrderId.Text = $"Order ID: {order.Id}";
-                lblOrderId.Font = new Font("Segoe UI", 10, FontStyle.Bold);
-                lblOrderId.Dock = DockStyle.Top;
-                lblOrderId.Height = 30;
-                lblOrderId.TextAlign = ContentAlignment.MiddleLeft;
+                Label lblOrder = new Label();
+                lblOrder.Text = $"Order";
+                lblOrder.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+                lblOrder.Dock = DockStyle.Top;
+                lblOrder.Height = 30;
+                lblOrder.TextAlign = ContentAlignment.MiddleCenter;
 
                 // Date
                 Label lblDate = new Label();
@@ -480,42 +437,34 @@ namespace BasicE_Commerce.Presentation
                 lblStatus.Height = 30;
                 lblStatus.TextAlign = ContentAlignment.MiddleLeft;
 
-
-
-                // زرار Details
+                //Details
                 Button btnDetails = new Button();
                 btnDetails.Text = "Details";
                 btnDetails.Dock = DockStyle.Bottom;
                 btnDetails.Height = 35;
                 btnDetails.BackColor = Color.LightGreen;
 
-                // هنا تعمل فتح صفحة تفاصيل الأوردر
+
                 btnDetails.Click += (s, ev) =>
                 {
-                    ShowOrderDetails(order.Id); // هتعمل دالة ShowOrderDetails
+                    ShowOrderDetails(order.Id);
                 };
 
-                // إضافة العناصر للكارد
+
                 card.Controls.Add(btnDetails);
-                //  card.Controls.Add(lblTotal);
                 card.Controls.Add(lblStatus);
                 card.Controls.Add(lblDate);
-                card.Controls.Add(lblOrderId);
-
-                // إضافة الكارد للـ Flow
+                card.Controls.Add(lblOrder);
                 flow.Controls.Add(card);
             }
 
-            // إضافة الـ Flow للـ Main Panel
+
             mainPanel.Controls.Add(flow);
         }
-
-        // دالة تعرض التفاصيل
         private void ShowOrderDetails(int orderId)
         {
-           // MessageBox.Show($"عرض تفاصيل الأوردر رقم {orderId}");
-            // هنا تقدر تعمل فورم جديد / Panel جديد فيه تفاصيل الأوردر (Items, Prices, Quantities)
-            UserOrderDetails userOrderDetails = new UserOrderDetails(orderId);
+
+            UserOrderDetailsForm userOrderDetails = new UserOrderDetailsForm(orderId);
             userOrderDetails.Show();
         }
 
