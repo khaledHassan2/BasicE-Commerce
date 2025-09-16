@@ -37,7 +37,7 @@ namespace BasicE_Commerce.InfraStructure.Repositories
             {
                 foreach (var include in includeProps)
                 {
-                    query.Include(include);
+                    query = query.Include(include);
                 }
             }
             if (!tracked)
