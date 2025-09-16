@@ -8,5 +8,6 @@ namespace BasicE_Commerce.Application.IServices.IUserServices
     public interface IUserOrderItemService : IUserService<OrderItem, int, UserOrderItemDTO, OrderItemCreatedDTO, IOrderItemRepository>
     {
         public void CreateOrderItem(OrderItemCreatedDTO orderItemCreatedDTO);
+        public List<orderItemDetailsDTO> GetOrderItemByOrderId(int orderId);
     }
 }

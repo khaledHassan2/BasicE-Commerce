@@ -7,6 +7,8 @@ using BasicE_Commerce.DTOs.OrderItemDTOs;
 using BasicE_Commerce.DTOs.PtoductDTOs;
 using BasicE_Commerce.InfraStructure;
 using BasicE_Commerce.InfraStructure.Repositories;
+using BasicE_Commerce.Presentation.UserForms;
+
 //using BasicE_Commerce.Presentation.UserForms;
 using Helpers;
 using System;
@@ -429,6 +431,9 @@ namespace BasicE_Commerce.Presentation
 
                 _orderItemService.CreateOrderItem(itemDTO);
             }
+            MessageBox.Show("Order Placed Successfully!");
+            LocalCart.carteItems.Clear();
+            mainPanel.Controls.Clear();
         }
 
         private void btnOrder_Click(object sender, EventArgs e)
@@ -446,14 +451,14 @@ namespace BasicE_Commerce.Presentation
             foreach (var order in orders)
             {
                 Panel card = new Panel();
-                card.Size = new Size(150, 150);
+                card.Size = new Size(180, 200);
                 card.Margin = new Padding(10);
                 card.BorderStyle = BorderStyle.FixedSingle;
                 card.BackColor = Color.White;
 
                 // Order ID
                 Label lblOrderId = new Label();
-                lblOrderId.Text = "";
+                lblOrderId.Text = $"Order ID: {order.Id}";
                 lblOrderId.Font = new Font("Segoe UI", 10, FontStyle.Bold);
                 lblOrderId.Dock = DockStyle.Top;
                 lblOrderId.Height = 30;
@@ -475,19 +480,24 @@ namespace BasicE_Commerce.Presentation
                 lblStatus.Height = 30;
                 lblStatus.TextAlign = ContentAlignment.MiddleLeft;
 
-                // Total Amount (من OrderItems)
-             //   decimal total = _orderItemService.GetItemById(order.Id);
-                             //    .Sum(i => i.Price * i.Quantity);
 
-                Label lblTotal = new Label();
-            //    lblTotal.Text = $"Total Amount: {total:C}";
-                lblTotal.Font = new Font("Segoe UI", 10, FontStyle.Bold);
-                lblTotal.Dock = DockStyle.Top;
-                lblTotal.Height = 30;
-                lblTotal.TextAlign = ContentAlignment.MiddleLeft;
+
+                // زرار Details
+                Button btnDetails = new Button();
+                btnDetails.Text = "Details";
+                btnDetails.Dock = DockStyle.Bottom;
+                btnDetails.Height = 35;
+                btnDetails.BackColor = Color.LightGreen;
+
+                // هنا تعمل فتح صفحة تفاصيل الأوردر
+                btnDetails.Click += (s, ev) =>
+                {
+                    ShowOrderDetails(order.Id); // هتعمل دالة ShowOrderDetails
+                };
 
                 // إضافة العناصر للكارد
-                card.Controls.Add(lblTotal);
+                card.Controls.Add(btnDetails);
+                //  card.Controls.Add(lblTotal);
                 card.Controls.Add(lblStatus);
                 card.Controls.Add(lblDate);
                 card.Controls.Add(lblOrderId);
@@ -500,5 +510,18 @@ namespace BasicE_Commerce.Presentation
             mainPanel.Controls.Add(flow);
         }
 
+        // دالة تعرض التفاصيل
+        private void ShowOrderDetails(int orderId)
+        {
+           // MessageBox.Show($"عرض تفاصيل الأوردر رقم {orderId}");
+            // هنا تقدر تعمل فورم جديد / Panel جديد فيه تفاصيل الأوردر (Items, Prices, Quantities)
+            UserOrderDetails userOrderDetails = new UserOrderDetails(orderId);
+            userOrderDetails.Show();
+        }
+
+        private void headerLabel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

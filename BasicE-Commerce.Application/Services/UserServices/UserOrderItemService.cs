@@ -23,5 +23,10 @@ namespace BasicE_Commerce.Application.Services.UserServices
             _repository.Create(orderItem);
             _unitOfWork.Commit();
         }
+        public List<orderItemDetailsDTO> GetOrderItemByOrderId(int orderId)
+        {
+            var orderItems = _repository.Get(filter: e => e.OrderId == orderId, includeProps: [e => e.Product]).ToList();
+            return orderItems.Adapt<List<orderItemDetailsDTO>>();
+        }
     }
 }

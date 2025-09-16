@@ -1,6 +1,6 @@
-﻿namespace BasicE_Commerce.Presentation.AdminForms.AdminOrderForms
+﻿namespace BasicE_Commerce.Presentation.UserForms
 {
-    partial class AdminOrderDetailsForm
+    partial class UserOrderDetails
     {
         /// <summary>
         /// Required designer variable.
@@ -35,24 +35,27 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(-4, 27);
+            dataGridView1.Dock = DockStyle.Fill;
+            dataGridView1.Location = new Point(0, 0);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(808, 344);
-            dataGridView1.TabIndex = 1;
+            dataGridView1.Size = new Size(800, 450);
+            dataGridView1.TabIndex = 0;
             // 
-            // AdminOrderDetailsForm
+            // UserOrderDetails
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 373);
+            ClientSize = new Size(800, 450);
             Controls.Add(dataGridView1);
-            Name = "AdminOrderDetailsForm";
-            Text = "AdminOrderDetailsForm";
+            Name = "UserOrderDetails";
+            Text = "UserOrderDetails";
+            Load += UserOrderDetails_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
+
         private DataGridView dataGridView1;
     }
 }

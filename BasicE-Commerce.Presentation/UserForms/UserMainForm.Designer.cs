@@ -111,6 +111,7 @@
             headerLabel.TabIndex = 2;
             headerLabel.Text = "Categories";
             headerLabel.TextAlign = ContentAlignment.MiddleCenter;
+            headerLabel.Click += headerLabel_Click;
             // 
             // checkoutbtn
             // 
