@@ -7,7 +7,7 @@ namespace BasicE_Commerce.Application.IServices.IUserServices
     public interface IUserOrderService : IUserService<Order, int, UserOrderDTO, OrderCreatedDTO, IOrderRepository>
     {
         public int CreateOrder(OrderCreatedDTO orderCreatedDTO);
-        public List<UserOrderDTO> getOrdersByUserId(int userId);
+        public List<UserOrderDTO> getOrdersByUserId(int? userId);
     }
     
 }

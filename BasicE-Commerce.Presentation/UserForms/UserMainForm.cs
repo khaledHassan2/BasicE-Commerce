@@ -434,9 +434,71 @@ namespace BasicE_Commerce.Presentation
         private void btnOrder_Click(object sender, EventArgs e)
         {
             checkoutbtn.Visible = false;
-            headerLabel.Text = "My Order";
+            headerLabel.Text = "My Orders";
             mainPanel.Controls.Clear();
 
+            var orders = _orderService.getOrdersByUserId(UserCookies.CurrentUserId);
+
+            FlowLayoutPanel flow = new FlowLayoutPanel();
+            flow.Dock = DockStyle.Fill;
+            flow.AutoScroll = true;
+
+            foreach (var order in orders)
+            {
+                Panel card = new Panel();
+                card.Size = new Size(150, 150);
+                card.Margin = new Padding(10);
+                card.BorderStyle = BorderStyle.FixedSingle;
+                card.BackColor = Color.White;
+
+                // Order ID
+                Label lblOrderId = new Label();
+                lblOrderId.Text = "";
+                lblOrderId.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+                lblOrderId.Dock = DockStyle.Top;
+                lblOrderId.Height = 30;
+                lblOrderId.TextAlign = ContentAlignment.MiddleLeft;
+
+                // Date
+                Label lblDate = new Label();
+                lblDate.Text = $"Date: {order.OrderDate.ToShortDateString()}";
+                lblDate.Font = new Font("Segoe UI", 10, FontStyle.Regular);
+                lblDate.Dock = DockStyle.Top;
+                lblDate.Height = 30;
+                lblDate.TextAlign = ContentAlignment.MiddleLeft;
+
+                // Status
+                Label lblStatus = new Label();
+                lblStatus.Text = $"Status: {order.Status}";
+                lblStatus.Font = new Font("Segoe UI", 10, FontStyle.Regular);
+                lblStatus.Dock = DockStyle.Top;
+                lblStatus.Height = 30;
+                lblStatus.TextAlign = ContentAlignment.MiddleLeft;
+
+                // Total Amount (من OrderItems)
+             //   decimal total = _orderItemService.GetItemById(order.Id);
+                             //    .Sum(i => i.Price * i.Quantity);
+
+                Label lblTotal = new Label();
+            //    lblTotal.Text = $"Total Amount: {total:C}";
+                lblTotal.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+                lblTotal.Dock = DockStyle.Top;
+                lblTotal.Height = 30;
+                lblTotal.TextAlign = ContentAlignment.MiddleLeft;
+
+                // إضافة العناصر للكارد
+                card.Controls.Add(lblTotal);
+                card.Controls.Add(lblStatus);
+                card.Controls.Add(lblDate);
+                card.Controls.Add(lblOrderId);
+
+                // إضافة الكارد للـ Flow
+                flow.Controls.Add(card);
+            }
+
+            // إضافة الـ Flow للـ Main Panel
+            mainPanel.Controls.Add(flow);
         }
+
     }
 }
