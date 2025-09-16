@@ -20,10 +20,10 @@ namespace BasicE_Commerce.Application.Services.AdminServices
             _orderItemRepository = repository;
         }
 
-        public List<AdminOrderItemDTO> GetOrderItemByOrderId(int orderId)
+        public List<orderItemDetailsDTO> GetOrderItemByOrderId(int orderId)
         {
-          var orderItems=  _orderItemRepository.Get(filter: e => e.OrderId == orderId);
-          return orderItems.Adapt<List<AdminOrderItemDTO>>();
+          var orderItems=  _orderItemRepository.Get(filter: e => e.OrderId == orderId,includeProps: [e=>e.Product]).ToList();
+          return orderItems.Adapt<List<orderItemDetailsDTO>>();
         }
     }
 }

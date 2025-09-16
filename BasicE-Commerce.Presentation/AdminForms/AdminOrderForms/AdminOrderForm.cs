@@ -42,7 +42,7 @@ namespace BasicE_Commerce.Presentation.AdminForms.AdminOrderForms
             var orders = _adminOrderService.GetAll().ToList();
 
             // اختبار عدد الأوردرات
-          //  MessageBox.Show("Orders Count: " + orders.Count);
+            //  MessageBox.Show("Orders Count: " + orders.Count);
 
             flowOrdersPanel.Controls.Clear();
             flowOrdersPanel.AutoScroll = true; // خلي الـ Panel يسمح بالسكرول
@@ -102,12 +102,17 @@ namespace BasicE_Commerce.Presentation.AdminForms.AdminOrderForms
             btnDetails.Click += (s, e) =>
             {
                 // افتح فورم التفاصيل
-                // var detailsForm = new AdminOrderDetailsForm(order);
-                // detailsForm.ShowDialog();
+                var detailsForm = new AdminOrderDetailsForm(order, _adminOrderItemService );
+                detailsForm.ShowDialog();
             };
             card.Controls.Add(btnDetails);
 
             return card;
+        }
+
+        private void flowOrdersPanel_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

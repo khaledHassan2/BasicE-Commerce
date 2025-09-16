@@ -38,6 +38,7 @@
             flowOrdersPanel.Name = "flowOrdersPanel";
             flowOrdersPanel.Size = new Size(738, 353);
             flowOrdersPanel.TabIndex = 0;
+            flowOrdersPanel.Paint += flowOrdersPanel_Paint;
             // 
             // AdminOrderForm
             // 

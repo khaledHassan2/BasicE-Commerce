@@ -27,6 +27,13 @@ namespace BasicE_Commerce.DTOs.mapping
             TypeAdapterConfig<OrderItem, AdminOrderItemDTO>.NewConfig();
             TypeAdapterConfig<OrderItem, UserOrderItemDTO>.NewConfig();
             TypeAdapterConfig<OrderItem, OrderItemCreatedDTO>.NewConfig();
+            TypeAdapterConfig<OrderItem, orderItemDetailsDTO>.NewConfig()
+            .Map(dest => dest.Id, src => src.Id)
+            .Map(dest => dest.Quantity, src => src.Quantity)
+            .Map(dest => dest.ProductName, src => src.Product.Name)
+            .Map(dest => dest.Description, src => src.Product.Description)
+            .Map(dest => dest.Stock, src => src.Product.Stock)
+            .Map(dest => dest.Price, src => src.Product.Price);
 
 
             TypeAdapterConfig<Product, ProductDTO>.NewConfig();
