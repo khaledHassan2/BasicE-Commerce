@@ -50,7 +50,7 @@ namespace BasicE_Commerce.InfraStructure.Repositories
 
         public TEntity? GetById(TKey? id)
         {
-            return this.GetItem(filter: e => e.Id != null && e.Id.Equals(id), tracked: false);
+            return this.GetItem(filter: e => e.Id != null && e.Id.Equals(id), tracked: true);
         }
 
         public TEntity? GetItem(Expression<Func<TEntity, bool>>? filter = null, Expression<Func<TEntity, object>>[]? includeProps = null, bool tracked = true)

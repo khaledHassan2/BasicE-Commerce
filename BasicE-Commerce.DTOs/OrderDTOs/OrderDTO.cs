@@ -8,7 +8,7 @@ namespace BasicE_Commerce.DTOs.OrderDTOs
 {
     public class OrderDTO
     {
-        public int ID { get; set; }
+        public int Id { get; set; }
         public DateTime OrderDate { get; set; } = DateTime.Now;
         public string Status { get; set; } = "Pending";
         public int CartId { get; set; }

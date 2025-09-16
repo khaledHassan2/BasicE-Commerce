@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            flowOrdersPanel = new Panel();
+            flowOrdersPanel = new FlowLayoutPanel();
             SuspendLayout();
             // 
             // flowOrdersPanel
@@ -53,6 +53,6 @@
 
         #endregion
 
-        private Panel flowOrdersPanel;
+        private FlowLayoutPanel flowOrdersPanel;
     }
 }
