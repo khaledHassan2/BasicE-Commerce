@@ -33,6 +33,8 @@ namespace BasicE_Commerce.Presentation.UserForms
         {
            var orders= _userOrderItemService.GetOrderItemByOrderId(_orderId);
             dataGridView1.DataSource = orders;
+            dataGridView1.Columns["Id"].Visible = false;
+            dataGridView1.Columns["Stock"].Visible = false;
         }
     }
 }

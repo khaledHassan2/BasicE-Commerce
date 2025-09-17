@@ -10,11 +10,13 @@ namespace BasicE_Commerce.InfraStructure.Repositories
     {
         private readonly BasicEcommerceDbContext _context;
         private readonly DbSet<TEntity> _dbSet;
+
         public GenericRepository(BasicEcommerceDbContext context)
         {
             this._context = context;
             this._dbSet = context.Set<TEntity>();
         }
+
         public void Create(TEntity entity)
         {
             this._context.Add(entity);
@@ -62,8 +64,13 @@ namespace BasicE_Commerce.InfraStructure.Repositories
         {
             this._context.Update(entity);
         }
-
-
+        public void DeleteById(TKey id)
+        {
+            var entity = _dbSet.Find(id);
+            if (entity != null)
+            {
+                _dbSet.Remove(entity);
+            }
+        }
     }
-
 }

@@ -8,6 +8,7 @@ namespace BasicE_Commerce.Application.IServices.IUserServices
     {
         public int CreateOrder(OrderCreatedDTO orderCreatedDTO);
         public List<UserOrderDTO> getOrdersByUserId(int? userId);
+        void DeleteOrder(int orderId);
     }
     
 }

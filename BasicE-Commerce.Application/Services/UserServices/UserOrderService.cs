@@ -30,5 +30,10 @@ namespace BasicE_Commerce.Application.Services.UserServices
             var ordersDto = orders.Adapt<List<UserOrderDTO>>();
             return ordersDto;
         }
+        public void DeleteOrder(int orderId)
+        {
+            _orderRepository.DeleteById(orderId);
+            _unitOfWork.Commit();
+        }
     }
 }
