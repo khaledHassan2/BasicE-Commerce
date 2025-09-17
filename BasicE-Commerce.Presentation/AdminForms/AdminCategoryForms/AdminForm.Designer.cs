@@ -33,13 +33,13 @@
             CategoryListGrid = new DataGridView();
             LoadCategoriesBtn = new Button();
             sidePanel = new Panel();
+            logOutbtn = new Button();
             mangmentOrderbtn = new Button();
             label1 = new Label();
             label2 = new Label();
             AddNewProductBtn = new Button();
             LoadProductsBtn = new Button();
             panel2 = new Panel();
-            logOutbtn = new Button();
             ((System.ComponentModel.ISupportInitialize)CategoryListGrid).BeginInit();
             sidePanel.SuspendLayout();
             panel2.SuspendLayout();
@@ -96,6 +96,16 @@
             sidePanel.Size = new Size(968, 388);
             sidePanel.TabIndex = 3;
             sidePanel.Paint += sidePanel_Paint;
+            // 
+            // logOutbtn
+            // 
+            logOutbtn.Location = new Point(881, 8);
+            logOutbtn.Name = "logOutbtn";
+            logOutbtn.Size = new Size(75, 23);
+            logOutbtn.TabIndex = 6;
+            logOutbtn.Text = "LogOut";
+            logOutbtn.UseVisualStyleBackColor = true;
+            logOutbtn.Click += button1_Click;
             // 
             // mangmentOrderbtn
             // 
@@ -155,16 +165,6 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(735, 349);
             panel2.TabIndex = 4;
-            // 
-            // logOutbtn
-            // 
-            logOutbtn.Location = new Point(881, 8);
-            logOutbtn.Name = "logOutbtn";
-            logOutbtn.Size = new Size(75, 23);
-            logOutbtn.TabIndex = 6;
-            logOutbtn.Text = "LogOut";
-            logOutbtn.UseVisualStyleBackColor = true;
-            logOutbtn.Click += button1_Click;
             // 
             // AdminForm
             // 
