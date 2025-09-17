@@ -393,9 +393,18 @@ namespace BasicE_Commerce.Presentation
 
                 _orderItemService.CreateOrderItem(itemDTO);
             }
-            MessageBox.Show("Order Placed Successfully!");
-            LocalCart.carteItems.Clear();
-            mainPanel.Controls.Clear();
+            if (LocalCart.carteItems == null || !LocalCart.carteItems.Any())
+            {
+                MessageBox.Show("You do not have any items in the cart!");
+                return;
+            }
+
+            else
+            {
+                MessageBox.Show("Order Placed Successfully!");
+                LocalCart.carteItems.Clear();
+                mainPanel.Controls.Clear();
+            }
         }
 
         private void btnOrder_Click(object sender, EventArgs e)
