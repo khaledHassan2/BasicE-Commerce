@@ -133,6 +133,7 @@
             logOutbtn.TabIndex = 4;
             logOutbtn.Text = "Log Out";
             logOutbtn.UseVisualStyleBackColor = true;
+            logOutbtn.Click += logOutbtn_Click;
             // 
             // UserMainForm
             // 
