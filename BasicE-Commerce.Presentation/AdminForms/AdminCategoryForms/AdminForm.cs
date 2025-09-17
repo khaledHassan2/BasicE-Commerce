@@ -44,8 +44,8 @@ namespace BasicE_Commerce.Presentation.AdminForms
                 {
 
                     _CategoryService.Delete(DeCategory.Id);
-                    _CategoryList.RemoveAt(e.Row.Index);
-                    _bindingSource.ResetBindings(false);
+                    // _CategoryList.RemoveAt(e.Row.Index);
+                    //  _bindingSource.ResetBindings(false);
                 }
                 else
                 {
@@ -95,6 +95,9 @@ namespace BasicE_Commerce.Presentation.AdminForms
 
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }

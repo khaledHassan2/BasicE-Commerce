@@ -39,6 +39,8 @@ namespace BasicE_Commerce.Application.Services.IdentityServices
         public void Logout()
         {
             UserCookies.RemoveCurrentUser();
+            LocalCart.carteItems.Clear();
+           
         }
 
         public void Regitser(UserCreatedDTO userDTO)

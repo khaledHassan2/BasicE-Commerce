@@ -39,6 +39,7 @@
             AddNewProductBtn = new Button();
             LoadProductsBtn = new Button();
             panel2 = new Panel();
+            logOutbtn = new Button();
             ((System.ComponentModel.ISupportInitialize)CategoryListGrid).BeginInit();
             sidePanel.SuspendLayout();
             panel2.SuspendLayout();
@@ -81,6 +82,7 @@
             // sidePanel
             // 
             sidePanel.BackColor = SystemColors.ActiveCaption;
+            sidePanel.Controls.Add(logOutbtn);
             sidePanel.Controls.Add(mangmentOrderbtn);
             sidePanel.Controls.Add(label1);
             sidePanel.Controls.Add(label2);
@@ -154,6 +156,16 @@
             panel2.Size = new Size(735, 349);
             panel2.TabIndex = 4;
             // 
+            // logOutbtn
+            // 
+            logOutbtn.Location = new Point(881, 8);
+            logOutbtn.Name = "logOutbtn";
+            logOutbtn.Size = new Size(75, 23);
+            logOutbtn.TabIndex = 6;
+            logOutbtn.Text = "LogOut";
+            logOutbtn.UseVisualStyleBackColor = true;
+            logOutbtn.Click += button1_Click;
+            // 
             // AdminForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -187,5 +199,6 @@
         private Label label2;
         private Button AddNewProductBtn;
         private Button mangmentOrderbtn;
+        private Button logOutbtn;
     }
 }
