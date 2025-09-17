@@ -25,7 +25,7 @@ namespace BasicE_Commerce.Application.Services.UserServices
         }
         public List<orderItemDetailsDTO> GetOrderItemByOrderId(int orderId)
         {
-            var orderItems = _repository.Get(filter: e => e.OrderId == orderId, includeProps: [e => e.Product]).ToList();
+            var orderItems = _repository.Get(filter: e => e.OrderId == orderId, includeProps: [e => e.Product])?.Where(o=>o.IsDeleted==false).ToList();
             return orderItems.Adapt<List<orderItemDetailsDTO>>();
         }
     }

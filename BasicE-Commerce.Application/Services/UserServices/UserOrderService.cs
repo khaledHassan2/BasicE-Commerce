@@ -26,7 +26,7 @@ namespace BasicE_Commerce.Application.Services.UserServices
 
         public List<UserOrderDTO> getOrdersByUserId(int? userId)
         {
-            var orders = _orderRepository.Get(filter: e => e.UserId == userId);
+            var orders = _orderRepository.Get(filter: e => e.UserId == userId)?.Where(o=>o.IsDeleted==false);
             var ordersDto = orders.Adapt<List<UserOrderDTO>>();
             return ordersDto;
         }
