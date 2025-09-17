@@ -99,12 +99,15 @@
             // 
             // logOutbtn
             // 
-            logOutbtn.Location = new Point(881, 8);
+            logOutbtn.BackColor = Color.Brown;
+            logOutbtn.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            logOutbtn.ForeColor = SystemColors.ButtonHighlight;
+            logOutbtn.Location = new Point(867, 3);
             logOutbtn.Name = "logOutbtn";
-            logOutbtn.Size = new Size(75, 23);
+            logOutbtn.Size = new Size(89, 28);
             logOutbtn.TabIndex = 6;
             logOutbtn.Text = "LogOut";
-            logOutbtn.UseVisualStyleBackColor = true;
+            logOutbtn.UseVisualStyleBackColor = false;
             logOutbtn.Click += button1_Click;
             // 
             // mangmentOrderbtn
