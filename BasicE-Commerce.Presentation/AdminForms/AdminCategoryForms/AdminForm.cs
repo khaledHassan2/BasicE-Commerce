@@ -5,11 +5,11 @@ using BasicE_Commerce.DTOs.CategoryDTOs;
 using BasicE_Commerce.DTOs.PtoductDTOs;
 using BasicE_Commerce.InfraStructure;
 using BasicE_Commerce.InfraStructure.Repositories;
-using BasicE_Commerce.Models;
 using BasicE_Commerce.Presentation.AdminForms.AdminCategoryForms;
 using BasicE_Commerce.Presentation.AdminForms.AdminOrderForms;
 using BasicE_Commerce.Presentation.AdminForms.AdminProductForms;
 using Helpers;
+using System.Windows.Forms;
 
 namespace BasicE_Commerce.Presentation.AdminForms
 {
@@ -34,25 +34,24 @@ namespace BasicE_Commerce.Presentation.AdminForms
         BindingSource _bindingSource;
         private void AdminForm_Load(object sender, EventArgs e)
         {
+            CategoryListGrid.AllowUserToAddRows = false;
+
             this.Text = UserCookies.CurrentUserName + " - Admin Panel";
-            CategoryListGrid.UserDeletingRow+=(sender, e) =>
+            //delet
+            CategoryListGrid.UserDeletingRow += (sender, e) =>
             {
-                if (e.Row.Index >= 0 && e.Row.Index < _CategoryList.Count)
+                if (e.Row.DataBoundItem is AdminCategoryDTO DeCategory)
                 {
-                    var categoryToDelete = _CategoryList[e.Row.Index];
-                    var confirmResult = MessageBox.Show($"Are you sure to delete category '{categoryToDelete.Name}'?", "Confirm Delete", MessageBoxButtons.YesNo);
-                    if (confirmResult == DialogResult.Yes)
-                    {
-                        _CategoryService.Delete(categoryToDelete.Id);
-                        _CategoryList.RemoveAt(e.Row.Index);
-                        _bindingSource.ResetBindings(false);
-                    }
-                    else
-                    {
-                        e.Cancel = true; // Cancel the deletion
-                    }
+
+                    _CategoryService.Delete(DeCategory.Id);
+                    _CategoryList.RemoveAt(e.Row.Index);
+                    _bindingSource.ResetBindings(false);
                 }
-           //     _bindingSource.DataSource.
+                else
+                {
+                    e.Cancel = true; // Cancel the deletion
+                }
+
             };
         }
         private void LoadCategoriesBtn_Click(object sender, EventArgs e)
@@ -96,6 +95,6 @@ namespace BasicE_Commerce.Presentation.AdminForms
 
         }
 
-      
+
     }
 }
