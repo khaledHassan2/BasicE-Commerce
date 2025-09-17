@@ -174,8 +174,21 @@ namespace BasicE_Commerce.Presentation
 
             foreach (var product in products)
             {
-                var saveDirectory = Path.Combine(AppDomain.CurrentDomain.BaseDirectory,
-                    "wwwroot", "Files", "Images", "ProductImages", product.Image);
+                
+                
+                    if (string.IsNullOrEmpty(product.Image))
+                    {
+                        // ممكن تعرض صورة افتراضية أو تكمل عادي
+                        continue;
+                    }
+
+                    var saveDirectory = Path.Combine(
+                        AppDomain.CurrentDomain.BaseDirectory,
+                        "wwwroot", "Files", "Images", "ProductImages", product.Image);
+
+                    // بقية الكود ...
+                
+
 
                 var card = CreateProductCard(product.Id, saveDirectory, product.Name, product.Description, product.Price);
 
@@ -394,10 +407,10 @@ namespace BasicE_Commerce.Presentation
                 _orderItemService.CreateOrderItem(itemDTO);
             }
             if (LocalCart.carteItems == null || !LocalCart.carteItems.Any())
-            {
-                MessageBox.Show("You do not have any items in the cart!");
-                return;
-            }
+{
+    MessageBox.Show("You do not have any items in the cart!");
+    return;
+}
 
             else
             {
