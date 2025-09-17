@@ -454,7 +454,7 @@ namespace BasicE_Commerce.Presentation
                 Button btnDelete = new Button();
                 btnDelete.Text = "Delete";
                 btnDelete.Dock = DockStyle.Bottom;
-                btnDelete.Height = 35;
+                btnDelete.Height = 30;
                 btnDelete.BackColor = Color.Red;
                 btnDelete.ForeColor = Color.White;
                 btnDelete.Enabled = (order.Status == "Pending");
@@ -466,16 +466,13 @@ namespace BasicE_Commerce.Presentation
                                                   "Confirm Delete",
                                                   MessageBoxButtons.YesNo,
                                                   MessageBoxIcon.Warning);
-
                     if (confirm == DialogResult.Yes)
                     {
-                        _orderService.DeleteOrder(order.Id);   // استدعاء السيرفيس
+                        _orderService.DeleteOrder(order.Id);   
                         MessageBox.Show("Order Deleted Successfully!");
                         btnOrder_Click(null, null); 
                     }
                 };
-
-
                 card.Controls.Add(btnDetails);
                 card.Controls.Add(btnDelete);
                 card.Controls.Add(lblStatus);
