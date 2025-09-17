@@ -23,7 +23,7 @@ namespace BasicE_Commerce.Application.Services
 
         public ICollection<TEntityDto> GetAll()
         {
-            var entities = _Repository.Get();
+            var entities = _Repository.Get()?.Where(p=>p.IsDeleted==false);
             var entitiesDTOs = entities.Adapt<ICollection<TEntityDto>>();
             return entitiesDTOs;
         }
@@ -31,6 +31,7 @@ namespace BasicE_Commerce.Application.Services
         public TEntityDto GetItemById(TKey id)
         {
             var entity = _Repository.GetById(id);
+            
             var entityDTO = entity.Adapt<TEntityDto>();
             return entityDTO;
         }

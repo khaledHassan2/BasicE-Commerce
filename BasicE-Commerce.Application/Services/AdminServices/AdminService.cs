@@ -36,7 +36,8 @@ namespace BasicE_Commerce.Application.Services.AdminServices
             var model = _Repository.GetById(id);
             if(model is not null)
             {
-                _Repository.Delete(model);
+                model.IsDeleted = true;
+                _Repository.Update(model);
                 _unitOfWork.Commit();
             }
             

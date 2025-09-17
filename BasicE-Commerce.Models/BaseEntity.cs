@@ -9,5 +9,6 @@ namespace BasicE_Commerce.Models
     public class BaseEntity<T>
     {
         public T Id { get; set; }= default!;
+        public bool IsDeleted { get; set; }= false;
     }
 }

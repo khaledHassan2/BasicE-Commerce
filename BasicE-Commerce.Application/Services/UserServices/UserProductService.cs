@@ -17,7 +17,7 @@ namespace BasicE_Commerce.Application.Services.UserServices
 
 		public List<UserProductDTO> GetProductsByCategory(int categoryId)
 		{
-			var products = _ProductRepository.Get(filter: e => e.CategoryId == categoryId);
+			var products = _ProductRepository.Get(filter: e => e.CategoryId == categoryId)?.Where(p=>p.IsDeleted==false);
 			var productsDto = products.Adapt<List<UserProductDTO>>();
 			return productsDto;
 		}
