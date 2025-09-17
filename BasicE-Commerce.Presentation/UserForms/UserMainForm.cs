@@ -450,8 +450,34 @@ namespace BasicE_Commerce.Presentation
                     ShowOrderDetails(order.Id);
                 };
 
+                //delete order
+                Button btnDelete = new Button();
+                btnDelete.Text = "Delete";
+                btnDelete.Dock = DockStyle.Bottom;
+                btnDelete.Height = 35;
+                btnDelete.BackColor = Color.Red;
+                btnDelete.ForeColor = Color.White;
+                btnDelete.Enabled = (order.Status == "Pending");
+                btnDelete.Visible = (order.Status == "Pending");
+
+                btnDelete.Click += (s, ev) =>
+                {
+                    var confirm = MessageBox.Show("Are you sure you want to delete this order?",
+                                                  "Confirm Delete",
+                                                  MessageBoxButtons.YesNo,
+                                                  MessageBoxIcon.Warning);
+
+                    if (confirm == DialogResult.Yes)
+                    {
+                        _orderService.DeleteOrder(order.Id);   // استدعاء السيرفيس
+                        MessageBox.Show("Order Deleted Successfully!");
+                        btnOrder_Click(null, null); 
+                    }
+                };
+
 
                 card.Controls.Add(btnDetails);
+                card.Controls.Add(btnDelete);
                 card.Controls.Add(lblStatus);
                 card.Controls.Add(lblDate);
                 card.Controls.Add(lblOrder);
