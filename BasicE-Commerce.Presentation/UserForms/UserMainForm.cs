@@ -1,4 +1,6 @@
-﻿using BasicE_Commerce.Application.IServices.IUserServices;
+﻿using BasicE_Commerce.Application.Contacts;
+using BasicE_Commerce.Application.IServices.IUserServices;
+using BasicE_Commerce.Application.Services.IdentityServices;
 using BasicE_Commerce.Application.Services.UserServices;
 using BasicE_Commerce.Context.Data;
 using BasicE_Commerce.DTOs.CategoryDTOs;
@@ -26,7 +28,8 @@ namespace BasicE_Commerce.Presentation
         private List<UserProductDTO>? _Products = new List<UserProductDTO>();
         private readonly IUserOrderService _orderService;
         private readonly IUserOrderItemService _orderItemService;
-
+        private readonly IUnitOfWork _unitOfWork;
+        private readonly IUserRepository _userRepository;
         public UserMainForm()
         {
             InitializeComponent();
@@ -42,6 +45,8 @@ namespace BasicE_Commerce.Presentation
             _productService = new UserProductService(unitOfWork, productRepository);
             _orderService = new UserOrderService(unitOfWork, orderRepository);
             _orderItemService = new UserOrderItemService(unitOfWork, orderItemRepository);
+            _unitOfWork = new UnitOfWork(dbContext);
+            _userRepository= new UserRepository(dbContext);
         }
 
         private void UserMainForm_Load(object sender, EventArgs e)
@@ -454,7 +459,7 @@ namespace BasicE_Commerce.Presentation
                 Button btnDelete = new Button();
                 btnDelete.Text = "Delete";
                 btnDelete.Dock = DockStyle.Bottom;
-                btnDelete.Height = 35;
+                btnDelete.Height = 30;
                 btnDelete.BackColor = Color.Red;
                 btnDelete.ForeColor = Color.White;
                 btnDelete.Enabled = (order.Status == "Pending");
@@ -466,16 +471,13 @@ namespace BasicE_Commerce.Presentation
                                                   "Confirm Delete",
                                                   MessageBoxButtons.YesNo,
                                                   MessageBoxIcon.Warning);
-
                     if (confirm == DialogResult.Yes)
                     {
-                        _orderService.DeleteOrder(order.Id);   // استدعاء السيرفيس
+                        _orderService.DeleteOrder(order.Id);   
                         MessageBox.Show("Order Deleted Successfully!");
                         btnOrder_Click(null, null); 
                     }
                 };
-
-
                 card.Controls.Add(btnDetails);
                 card.Controls.Add(btnDelete);
                 card.Controls.Add(lblStatus);
@@ -497,6 +499,14 @@ namespace BasicE_Commerce.Presentation
         private void headerLabel_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void logOutbtn_Click(object sender, EventArgs e)
+        {
+            AcountService acountService = new AcountService(_unitOfWork, _userRepository);
+            
+            acountService.Logout();
+            this.Close();   
         }
     }
 }
