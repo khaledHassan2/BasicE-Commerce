@@ -29,12 +29,37 @@ namespace BasicE_Commerce.Presentation.AdminForms
 
             var productRepsoity = new ProductRepository(dbContext);
             _ProductService = new AdminProductService(unitOfWork, productRepsoity);
+            _bindingSource = new BindingSource();
         }
-
+        BindingSource _bindingSource;
+        private void AdminForm_Load(object sender, EventArgs e)
+        {
+            this.Text = UserCookies.CurrentUserName + " - Admin Panel";
+            CategoryListGrid.UserDeletingRow+=(sender, e) =>
+            {
+                if (e.Row.Index >= 0 && e.Row.Index < _CategoryList.Count)
+                {
+                    var categoryToDelete = _CategoryList[e.Row.Index];
+                    var confirmResult = MessageBox.Show($"Are you sure to delete category '{categoryToDelete.Name}'?", "Confirm Delete", MessageBoxButtons.YesNo);
+                    if (confirmResult == DialogResult.Yes)
+                    {
+                        _CategoryService.Delete(categoryToDelete.Id);
+                        _CategoryList.RemoveAt(e.Row.Index);
+                        _bindingSource.ResetBindings(false);
+                    }
+                    else
+                    {
+                        e.Cancel = true; // Cancel the deletion
+                    }
+                }
+           //     _bindingSource.DataSource.
+            };
+        }
         private void LoadCategoriesBtn_Click(object sender, EventArgs e)
         {
             _CategoryList = _CategoryService.GetAll().ToList();
-            CategoryListGrid.DataSource = _CategoryList;
+            _bindingSource.DataSource = _CategoryList;
+            CategoryListGrid.DataSource = _bindingSource;
         }
 
         private void AddNewCategoryBtn_Click(object sender, EventArgs e)
@@ -71,9 +96,6 @@ namespace BasicE_Commerce.Presentation.AdminForms
 
         }
 
-        private void AdminForm_Load(object sender, EventArgs e)
-        {
-            this.Text=UserCookies.CurrentUserName + " - Admin Panel";
-        }
+      
     }
 }

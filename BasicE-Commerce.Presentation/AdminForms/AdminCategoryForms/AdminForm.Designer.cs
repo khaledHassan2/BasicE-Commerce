@@ -97,7 +97,7 @@
             // 
             // mangmentOrderbtn
             // 
-            mangmentOrderbtn.Location = new Point(4, 294);
+            mangmentOrderbtn.Location = new Point(4, 308);
             mangmentOrderbtn.Margin = new Padding(3, 2, 3, 2);
             mangmentOrderbtn.Name = "mangmentOrderbtn";
             mangmentOrderbtn.Size = new Size(196, 54);
@@ -109,7 +109,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(74, 160);
+            label1.Location = new Point(74, 174);
             label1.Name = "label1";
             label1.Size = new Size(49, 15);
             label1.TabIndex = 2;
@@ -126,7 +126,7 @@
             // 
             // AddNewProductBtn
             // 
-            AddNewProductBtn.Location = new Point(4, 236);
+            AddNewProductBtn.Location = new Point(4, 250);
             AddNewProductBtn.Margin = new Padding(3, 2, 3, 2);
             AddNewProductBtn.Name = "AddNewProductBtn";
             AddNewProductBtn.Size = new Size(196, 54);
@@ -137,7 +137,7 @@
             // 
             // LoadProductsBtn
             // 
-            LoadProductsBtn.Location = new Point(4, 177);
+            LoadProductsBtn.Location = new Point(4, 191);
             LoadProductsBtn.Margin = new Padding(3, 2, 3, 2);
             LoadProductsBtn.Name = "LoadProductsBtn";
             LoadProductsBtn.Size = new Size(196, 55);
