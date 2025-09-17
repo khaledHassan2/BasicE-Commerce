@@ -31,6 +31,7 @@
             mainPanel = new Panel();
             headerLabel = new Label();
             checkoutbtn = new Button();
+            logOutbtn = new Button();
             sidePanel.SuspendLayout();
             SuspendLayout();
             // 
@@ -124,9 +125,19 @@
             checkoutbtn.UseVisualStyleBackColor = true;
             checkoutbtn.Click += checkoutbtn_Click;
             // 
+            // logOutbtn
+            // 
+            logOutbtn.Location = new Point(1002, 11);
+            logOutbtn.Name = "logOutbtn";
+            logOutbtn.Size = new Size(75, 23);
+            logOutbtn.TabIndex = 4;
+            logOutbtn.Text = "Log Out";
+            logOutbtn.UseVisualStyleBackColor = true;
+            // 
             // UserMainForm
             // 
             ClientSize = new Size(1103, 431);
+            Controls.Add(logOutbtn);
             Controls.Add(checkoutbtn);
             Controls.Add(mainPanel);
             Controls.Add(sidePanel);
@@ -143,5 +154,6 @@
 
         private Button btnOrder;
         private Button checkoutbtn;
+        private Button logOutbtn;
     }
 }

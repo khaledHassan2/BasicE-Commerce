@@ -1,5 +1,7 @@
-﻿using BasicE_Commerce.Application.IServices.IAdminServices;
+﻿using BasicE_Commerce.Application.Contacts;
+using BasicE_Commerce.Application.IServices.IAdminServices;
 using BasicE_Commerce.Application.Services.AdminServices;
+using BasicE_Commerce.Application.Services.IdentityServices;
 using BasicE_Commerce.Context.Data;
 using BasicE_Commerce.DTOs.CategoryDTOs;
 using BasicE_Commerce.DTOs.PtoductDTOs;
@@ -9,6 +11,7 @@ using BasicE_Commerce.Presentation.AdminForms.AdminCategoryForms;
 using BasicE_Commerce.Presentation.AdminForms.AdminOrderForms;
 using BasicE_Commerce.Presentation.AdminForms.AdminProductForms;
 using Helpers;
+using Microsoft.EntityFrameworkCore;
 using System.Windows.Forms;
 
 namespace BasicE_Commerce.Presentation.AdminForms
@@ -19,6 +22,8 @@ namespace BasicE_Commerce.Presentation.AdminForms
         private List<AdminCategoryDTO>? _CategoryList;
         private IAdminProductService _ProductService;
         private List<AdminProductDTO>? _ProductList;
+        private readonly IUnitOfWork _unitOfWork;
+        private readonly IUserRepository _userRepository;
         public AdminForm()
         {
             InitializeComponent();
@@ -30,6 +35,9 @@ namespace BasicE_Commerce.Presentation.AdminForms
             var productRepsoity = new ProductRepository(dbContext);
             _ProductService = new AdminProductService(unitOfWork, productRepsoity);
             _bindingSource = new BindingSource();
+
+            _unitOfWork = unitOfWork;
+            _userRepository=new UserRepository(dbContext);
         }
         BindingSource _bindingSource;
         private void AdminForm_Load(object sender, EventArgs e)
@@ -44,8 +52,8 @@ namespace BasicE_Commerce.Presentation.AdminForms
                 {
 
                     _CategoryService.Delete(DeCategory.Id);
-                    _CategoryList.RemoveAt(e.Row.Index);
-                    _bindingSource.ResetBindings(false);
+                    // _CategoryList.RemoveAt(e.Row.Index);
+                    //  _bindingSource.ResetBindings(false);
                 }
                 else
                 {
@@ -94,6 +102,15 @@ namespace BasicE_Commerce.Presentation.AdminForms
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AcountService  acountService = new AcountService(_unitOfWork, _userRepository);
+            acountService.Logout();
+            this.Close();
+
+        }
+
 
 
     }

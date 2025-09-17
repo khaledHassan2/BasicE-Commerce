@@ -33,6 +33,7 @@
             CategoryListGrid = new DataGridView();
             LoadCategoriesBtn = new Button();
             sidePanel = new Panel();
+            logOutbtn = new Button();
             mangmentOrderbtn = new Button();
             label1 = new Label();
             label2 = new Label();
@@ -81,6 +82,7 @@
             // sidePanel
             // 
             sidePanel.BackColor = SystemColors.ActiveCaption;
+            sidePanel.Controls.Add(logOutbtn);
             sidePanel.Controls.Add(mangmentOrderbtn);
             sidePanel.Controls.Add(label1);
             sidePanel.Controls.Add(label2);
@@ -94,6 +96,16 @@
             sidePanel.Size = new Size(968, 388);
             sidePanel.TabIndex = 3;
             sidePanel.Paint += sidePanel_Paint;
+            // 
+            // logOutbtn
+            // 
+            logOutbtn.Location = new Point(881, 8);
+            logOutbtn.Name = "logOutbtn";
+            logOutbtn.Size = new Size(75, 23);
+            logOutbtn.TabIndex = 6;
+            logOutbtn.Text = "LogOut";
+            logOutbtn.UseVisualStyleBackColor = true;
+            logOutbtn.Click += button1_Click;
             // 
             // mangmentOrderbtn
             // 
@@ -187,5 +199,6 @@
         private Label label2;
         private Button AddNewProductBtn;
         private Button mangmentOrderbtn;
+        private Button logOutbtn;
     }
 }
