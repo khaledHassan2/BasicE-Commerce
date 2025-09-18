@@ -28,10 +28,11 @@ namespace BasicE_Commerce.Presentation.AdminForms.AdminProductForms
 
             _categoryService = new AdminCategoryService(unitOfWork, CategoryRepsoity);
             _categories = _categoryService.GetAll().ToList();
-            CategoryOptionsList.DataSource = _categories;
+            
 
             CategoryOptionsList.DisplayMember = "Name";
             CategoryOptionsList.ValueMember = "Id";
+            CategoryOptionsList.DataSource = _categories;
 
 
             var productRepsoity = new ProductRepository(dbContext);

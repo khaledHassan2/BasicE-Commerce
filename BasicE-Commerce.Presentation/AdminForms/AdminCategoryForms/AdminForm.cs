@@ -61,6 +61,14 @@ namespace BasicE_Commerce.Presentation.AdminForms
                 }
 
             };
+
+            CategoryListGrid.CellEndEdit += (sender, e) =>
+            {
+                if (CategoryListGrid.Rows[e.RowIndex].DataBoundItem is AdminCategoryDTO UpCategory)
+                {
+                    _CategoryService.Update(UpCategory);
+                }
+            };
         }
         private void LoadCategoriesBtn_Click(object sender, EventArgs e)
         {
@@ -79,7 +87,28 @@ namespace BasicE_Commerce.Presentation.AdminForms
         {
             _ProductList = _ProductService.GetAll().ToList();
             CategoryListGrid.DataSource = _ProductList;
+            CategoryListGrid.UserDeletingRow += (sender, e) =>
+            {
+                if (e.Row.DataBoundItem is AdminProductDTO DeProduct)
+                {
+                    _ProductService.Delete(DeProduct.Id);
+
+                }
+                else
+                {
+                    e.Cancel = true;
+                }
+            };
+
+            CategoryListGrid.CellEndEdit += (sender, e) =>
+            {
+                if (CategoryListGrid.Rows[e.RowIndex].DataBoundItem is AdminProductDTO UpProduct)
+                {
+                    _ProductService.Update(UpProduct);
+                }
+            };
         }
+        
 
         private void AddNewProductBtn_Click(object sender, EventArgs e)
         {

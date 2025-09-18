@@ -63,7 +63,17 @@ namespace BasicE_Commerce.InfraStructure.Repositories
 
         public void Update(TEntity entity)
         {
-            this._context.Update(entity);
+            var trackedEntity = _dbSet.Find(entity.Id);
+            if (trackedEntity != null)
+            {
+                _context.Entry(trackedEntity).CurrentValues.SetValues(entity);
+            }
+            else
+            {
+                // Optionally handle the case where the entity is not found
+                _dbSet.Attach(entity);
+                _context.Entry(entity).State = EntityState.Modified;
+            }
         }
         public void DeleteById(TKey id)
         {
