@@ -36,11 +36,23 @@ namespace BasicE_Commerce.Presentation.AdminForms.AdminCategoryForms
                 Name = CategoryNameinput.Text,
                 Description = CategoryDescriptionInput.Text
             };
+
+            if (newCategory.Name.Length>3) {
             _CategoryService.Create(newCategory);
             this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Name Must By More Than 3 Char");
+            }
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AddNewCategoryForm_Load(object sender, EventArgs e)
         {
 
         }

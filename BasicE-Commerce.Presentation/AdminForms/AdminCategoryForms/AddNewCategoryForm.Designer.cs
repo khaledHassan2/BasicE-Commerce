@@ -130,6 +130,7 @@
             Name = "AddNewCategoryForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AddNewCategoryForm";
+            Load += AddNewCategoryForm_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();

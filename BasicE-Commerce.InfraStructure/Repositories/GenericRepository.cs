@@ -24,7 +24,8 @@ namespace BasicE_Commerce.InfraStructure.Repositories
 
         public void Delete(TEntity entity)
         {
-            this._context.Remove(entity);
+            entity.IsDeleted= true;
+            this._context.Update(entity);
         }
 
         public IQueryable<TEntity>? Get(Expression<Func<TEntity, bool>>? filter = null, Expression<Func<TEntity, object>>[]? includeProps = null, bool tracked = true)
@@ -69,7 +70,8 @@ namespace BasicE_Commerce.InfraStructure.Repositories
             var entity = _dbSet.Find(id);
             if (entity != null)
             {
-                _dbSet.Remove(entity);
+                entity.IsDeleted = true;
+                _dbSet.Update(entity);
             }
         }
     }

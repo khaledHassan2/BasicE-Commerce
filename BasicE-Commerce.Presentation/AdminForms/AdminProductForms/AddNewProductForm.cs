@@ -70,8 +70,19 @@ namespace BasicE_Commerce.Presentation.AdminForms.AdminProductForms
                 CategoryId = _CategoryIdSelected,
                 Image = FileOperation.UploadImage(ProductImageBox.Image, "ProductImages")
             };
+            if(entityCreated.Name.Length>3
+                &&entityCreated.Image != null
+                &&entityCreated.Price!=null
+                &&entityCreated.CategoryId!=null
+                &&entityCreated.Stock>=1)
+            {
             _productService.Create(entityCreated);
             this.Close();
+            }
+            else
+            {
+                MessageBox.Show("data is in Valid");
+            }
 
         }
 
