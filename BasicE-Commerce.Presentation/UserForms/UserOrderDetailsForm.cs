@@ -23,18 +23,23 @@ namespace BasicE_Commerce.Presentation.UserForms
             InitializeComponent();
             var dbContext = new BasicEcommerceDbContext();
             var unitOfWork = new UnitOfWork(dbContext);
-            var repo=new OrderItemRepository(dbContext);
-            _userOrderItemService = new UserOrderItemService(unitOfWork,repo);
-            _orderId= orderId;
+            var repo = new OrderItemRepository(dbContext);
+            _userOrderItemService = new UserOrderItemService(unitOfWork, repo);
+            _orderId = orderId;
         }
         IUserOrderItemService _userOrderItemService;
 
         private void UserOrderDetails_Load(object sender, EventArgs e)
         {
-           var orders= _userOrderItemService.GetOrderItemByOrderId(_orderId);
+            var orders = _userOrderItemService.GetOrderItemByOrderId(_orderId);
             dataGridView1.DataSource = orders;
             dataGridView1.Columns["Id"].Visible = false;
             dataGridView1.Columns["Stock"].Visible = false;
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

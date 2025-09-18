@@ -178,7 +178,7 @@ namespace BasicE_Commerce.Presentation
                 
                     if (string.IsNullOrEmpty(product.Image))
                     {
-                        // ممكن تعرض صورة افتراضية أو تكمل عادي
+                      
                         continue;
                     }
 
@@ -186,7 +186,7 @@ namespace BasicE_Commerce.Presentation
                         AppDomain.CurrentDomain.BaseDirectory,
                         "wwwroot", "Files", "Images", "ProductImages", product.Image);
 
-                    // بقية الكود ...
+
                 
 
 
