@@ -451,32 +451,14 @@ namespace BasicE_Commerce.Presentation
 
             foreach (var product in products)
             {
-<<<<<<< HEAD
-                
-                
-                    if (string.IsNullOrEmpty(product.Image))
-                    {
-                      
-                        continue;
-                    }
 
-                    var saveDirectory = Path.Combine(
-                        AppDomain.CurrentDomain.BaseDirectory,
-                        "wwwroot", "Files", "Images", "ProductImages", product.Image);
-
-
-                
-
-
-                var card = CreateProductCard(product.Id, saveDirectory, product.Name, product.Description, product.Price);
-=======
                 if (string.IsNullOrEmpty(product.Image))
                     continue;
 
                 var saveDirectory = Path.Combine(
                     AppDomain.CurrentDomain.BaseDirectory,
                     "wwwroot", "Files", "Images", "ProductImages", product.Image);
->>>>>>> df34bd94657af63897b1798eef97733753cc68f5
+
 
                 var card = CreateModernProductCard(product.Id, saveDirectory, product.Name,
                     product.Description, product.Price);
